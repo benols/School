@@ -1,0 +1,50 @@
+<dataSource name="Derby (Remote) - school@localhost">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="2.6">
+    <schema id="1" name="ADMIN">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="APP" />
+    <schema id="3" name="NULLID" />
+    <schema id="4" name="SQLJ" />
+    <schema id="5" name="SYS" />
+    <schema id="6" name="SYSCAT" />
+    <schema id="7" name="SYSCS_DIAG" />
+    <schema id="8" name="SYSCS_UTIL" />
+    <schema id="9" name="SYSFUN" />
+    <schema id="10" name="SYSIBM" />
+    <schema id="11" name="SYSPROC" />
+    <schema id="12" name="SYSSTAT" />
+    <table id="13" parent="1" name="SEQUENCE" />
+    <table id="14" parent="1" name="USERTABLE" />
+    <column id="15" parent="13" name="SEQ_NAME">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(50)|12</data-type>
+    </column>
+    <column id="16" parent="13" name="SEQ_COUNT">
+      <data-type>DECIMAL(15)|3</data-type>
+    </column>
+    <key id="17" parent="13" name="SQL160831091901720">
+      <name-surrogate>1</name-surrogate>
+      <columns>SEQ_NAME</columns>
+      <primary>1</primary>
+    </key>
+    <column id="18" parent="14" name="USERID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="19" parent="14" name="PASSWORD">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="20" parent="14" name="ROLE">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="21" parent="14" name="USERNAME">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <key id="22" parent="14" name="SQL160831102315460">
+      <name-surrogate>1</name-surrogate>
+      <columns>USERID</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
