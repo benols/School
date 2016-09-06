@@ -1,8 +1,11 @@
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Benjamin Olsson
@@ -38,6 +41,31 @@ public class AdminBean implements Serializable {
             return "login";
         }
     }*/
+    public String remove(Long idRemove){
+        service.dataEntryRemove(idRemove);
+        return "edit";
+    }
+    public String removeX(){
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+
+        Long idRemove = Long.getLong(params.get("idRemove"));
+        System.out.println("Remove" + idRemove);
+        service.dataEntryRemove(idRemove);
+        return "admin";
+    }
+
+    public String edit(long id){
+        System.out.println("Adding");
+        setUsername("");
+        setPassword("");
+        return "admin";
+    }
+
+    public List<UserTable> getDataEntryList(){
+        List<UserTable> ps = service.getAll("");
+        return ps;
+    }
 
     public String addUser(){
         //userClass = new UserClass(getUsername(),getPassword(), getRole());

@@ -5,21 +5,22 @@ import java.io.Serializable;
  * @author Benjamin Olsson
  */
 @Entity
-
 @Table(name="UserTable")
 @NamedQueries({
-        //@NamedQuery(name="selectAllIDs",query="SELECT t.id FROM Question t"),
-        //@NamedQuery(name="FQuestion", query="SELECT t FROM Question t"),
+        @NamedQuery(name="selectAllIDs",query="SELECT t.userId FROM UserTable t"),
+        @NamedQuery(name="selectAll",query="SELECT t.userId FROM UserTable t"),
+        @NamedQuery(name="FQuestion", query="SELECT t FROM UserTable t"),
         //@NamedQuery(name="validate", query="SELECT t FROM UserTable t WHERE LOCATE(:username,t.username) = 1 AND LOCATE(:password,t.password) = 1"),
         //@NamedQuery(name="validate", query="SELECT t FROM UserTable t WHERE LOCATE(:username,t.username) = 1")//,
         //@NamedQuery(name="validate", query="SELECT DISTINCT u FROM UserTable u WHERE u.username = :username AND u.password = :password")
-        @NamedQuery(name="validate", query="SELECT DISTINCT u FROM UserTable u WHERE u.username = :username AND u.password = :password")
+        @NamedQuery(name="validate", query="SELECT DISTINCT u FROM UserTable u WHERE u.username = :username AND u.password = :password"),
+
         //@NamedQuery(name="selectAllIDs",query="SELECT id FROM tabell id"),
         // @NamedQuery(name="selectAllIDs",query="SELECT id FROM Tabell"),
         //@NamedQuery(name="selectAll",query="SELECT t.question  FROM Question t")
         //@NamedQuery(name="selectAll",query="SELECT t FROM Question t"),
         //@NamedQuery(name="selectQuery", query="SELECT t FROM Question t WHERE LOCATE(:fult,t.id) = 1"),
-        //@NamedQuery(name="selectOne",query="SELECT t FROM Question t WHERE LOCATE(:id,t.id) = 1")
+        @NamedQuery(name="selectOne",query="SELECT t FROM UserTable t WHERE t.userId = :id")
 })
 public class UserTable implements Serializable{
     @Id

@@ -2,6 +2,7 @@ import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * @author Benjamin Olsson
@@ -25,6 +26,21 @@ public class EjbUserTable {
         userTable.setRole(p.getRole());
         em.persist(userTable);
     }*/
+    public void dataEntryRemove( Long id) {
+        UserTable table = em.find(UserTable.class, id);
+        em.remove(table);
+    }
+
+    public List<UserTable> getAll(String located) {
+        List<UserTable> l;
+        if (located.equals(""))
+            l = em.createNamedQuery("selectAll").getResultList();
+        else
+            l = em.createNamedQuery("selectOne").setParameter("id",located).getResultList();
+
+        return l;
+    }
+
     public void userAdd( UserClass p ) {
         UserTable userTable = new UserTable();
         userTable.setUsername(p.getUsername());
