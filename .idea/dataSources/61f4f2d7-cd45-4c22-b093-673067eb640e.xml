@@ -16,34 +16,107 @@
     <schema id="10" name="SYSIBM" />
     <schema id="11" name="SYSPROC" />
     <schema id="12" name="SYSSTAT" />
-    <table id="13" parent="2" name="SEQUENCE" />
-    <table id="14" parent="2" name="USERTABLE" />
-    <column id="15" parent="13" name="SEQ_NAME">
+    <table id="13" parent="2" name="COURSETABLE" />
+    <table id="14" parent="2" name="LANGUAGETABLE" />
+    <table id="15" parent="2" name="LEVELTABLE" />
+    <table id="16" parent="2" name="ROLETABLE" />
+    <table id="17" parent="2" name="SEQUENCE" />
+    <table id="18" parent="2" name="USERTABLE" />
+    <column id="19" parent="13" name="COURSEID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="20" parent="13" name="COURSECODE">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="21" parent="13" name="DESCRIPTION">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="22" parent="13" name="DURATION">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="23" parent="13" name="LANGUAGEID">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="24" parent="13" name="LEVELID">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="25" parent="13" name="MAXSTUDENTS">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="26" parent="13" name="NAME">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <key id="27" parent="13" name="SQL160907134238880">
+      <name-surrogate>1</name-surrogate>
+      <columns>COURSEID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="28" parent="14" name="LANGUAGEID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="29" parent="14" name="LANGUAGE">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(30)|12</data-type>
+    </column>
+    <key id="30" parent="14" name="SQL160907160024740">
+      <name-surrogate>1</name-surrogate>
+      <columns>LANGUAGEID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="31" parent="15" name="LEVELID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="32" parent="15" name="LEVEL">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(50)|12</data-type>
     </column>
-    <column id="16" parent="13" name="SEQ_COUNT">
+    <key id="33" parent="15" name="SQL160907154835100">
+      <name-surrogate>1</name-surrogate>
+      <columns>LEVELID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="34" parent="16" name="ROLEID">
+      <mandatory>1</mandatory>
+      <data-type>BIGINT(19)|-5</data-type>
+    </column>
+    <column id="35" parent="16" name="ROLE">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(20)|12</data-type>
+    </column>
+    <key id="36" parent="16" name="SQL160907160024540">
+      <name-surrogate>1</name-surrogate>
+      <columns>ROLEID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="37" parent="17" name="SEQ_NAME">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(50)|12</data-type>
+    </column>
+    <column id="38" parent="17" name="SEQ_COUNT">
       <data-type>DECIMAL(15)|3</data-type>
     </column>
-    <key id="17" parent="13" name="SQL160831091901720">
+    <key id="39" parent="17" name="SQL160831091901720">
       <name-surrogate>1</name-surrogate>
       <columns>SEQ_NAME</columns>
       <primary>1</primary>
     </key>
-    <column id="18" parent="14" name="USERID">
+    <column id="40" parent="18" name="USERID">
       <mandatory>1</mandatory>
       <data-type>BIGINT(19)|-5</data-type>
     </column>
-    <column id="19" parent="14" name="PASSWORD">
+    <column id="41" parent="18" name="PASSWORD">
       <data-type>VARCHAR(255)|12</data-type>
     </column>
-    <column id="20" parent="14" name="ROLE">
+    <column id="42" parent="18" name="ROLE">
       <data-type>VARCHAR(255)|12</data-type>
     </column>
-    <column id="21" parent="14" name="USERNAME">
+    <column id="43" parent="18" name="USERNAME">
       <data-type>VARCHAR(255)|12</data-type>
     </column>
-    <key id="22" parent="14" name="SQL160831102315460">
+    <key id="44" parent="18" name="SQL160831102315460">
       <name-surrogate>1</name-surrogate>
       <columns>USERID</columns>
       <primary>1</primary>
