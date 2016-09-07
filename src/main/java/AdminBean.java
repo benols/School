@@ -1,3 +1,4 @@
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -10,12 +11,11 @@ import java.util.Map;
 /**
  * @author Benjamin Olsson
  */
+
 @Named
 @ManagedBean
 @SessionScoped
 public class AdminBean implements Serializable {
-
-
     //private UserClass user = new UserClass("admin", "admin", "admin");
     private UserClass user = new UserClass();
     private EjbUserTable ejbUserTable = new EjbUserTable();
@@ -30,17 +30,6 @@ public class AdminBean implements Serializable {
         user.setRole("");
     }*/
 
-    /*public String validateLogin(){
-        UserTable userTable = service.validateUser(getUsername(), getPassword());
-        if(userTable != null) {
-            user.setUserId(userTable.getUserId());
-            user.setRole(userTable.getRole());
-            return user.getRole();
-        }
-        else{
-            return "login";
-        }
-    }*/
     public String remove(Long idRemove){
         service.dataEntryRemove(idRemove);
         return "edit";
@@ -59,7 +48,7 @@ public class AdminBean implements Serializable {
         System.out.println("Adding");
         setUsername("");
         setPassword("");
-        return "admin";
+        return "editUser";
     }
 
     public List<UserTable> getDataEntryList(){
@@ -99,9 +88,4 @@ public class AdminBean implements Serializable {
     public void setRole(String role) {
         user.setRole(role);
     }
-
-
-
-
-
 }

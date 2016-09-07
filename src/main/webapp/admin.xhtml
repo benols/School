@@ -12,6 +12,7 @@
     <h:form>
         <h:outputLabel value="Hello, admin"/>
         <br/>
+        <br/>
         <div>
             <h:outputLabel value="Add user: "/>
             <br/>
@@ -26,34 +27,33 @@
             <br/>
             <h:commandButton value="Add" action="#{adminBean.addUser}"/>
         </div>
+        <br/>
         <div>
-            <h:outputLabel value="Users: "/>
-                 <h:outputLabel value="Edit question"/>
-                <br/>
-                <h:dataTable value="#{adminBean.dataEntryList}" var="p" >
-                    <h:column>
-                        <f:facet name="header">Id</f:facet>
-                        #{p.userid}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Question</f:facet>
-                        #{p.username}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Answer</f:facet>
-                        #{p.password}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Role</f:facet>
-                        #{p.role}
-                    </h:column>
-                    <h:column>
-                        <h:commandButton value="Delete" action="#{adminBean.removeX()}"/>
-                    </h:column>
-                    <h:column>
-                        <h:commandButton value="Edit" action="#{adminBean.edit(p.userId)}"/>
-                    </h:column>
-                </h:dataTable>
+            <br/>
+            <h:dataTable value="#{adminBean.dataEntryList}" var="p" >
+                <!--<h:column>
+                    <f:facet name="header">UserId</f:facet>
+                    #{p.userid}
+                </h:column>-->
+                <h:column>
+                    <f:facet name="header">Username</f:facet>
+                    #{p.username}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Password</f:facet>
+                    #{p.password}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Role</f:facet>
+                    #{p.role}
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Delete" action="#{adminBean.remove(p.userId)}"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Edit" action="#{adminBean.edit(p.userId)}"/>
+                </h:column>
+            </h:dataTable>
 
         </div>
     </h:form>

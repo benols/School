@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Table(name="UserTable")
 @NamedQueries({
         @NamedQuery(name="selectAllIDs",query="SELECT t.userId FROM UserTable t"),
-        @NamedQuery(name="selectAll",query="SELECT t.userId FROM UserTable t"),
+        @NamedQuery(name="selectAll",query="SELECT t FROM UserTable t"),
         @NamedQuery(name="FQuestion", query="SELECT t FROM UserTable t"),
         //@NamedQuery(name="validate", query="SELECT t FROM UserTable t WHERE LOCATE(:username,t.username) = 1 AND LOCATE(:password,t.password) = 1"),
         //@NamedQuery(name="validate", query="SELECT t FROM UserTable t WHERE LOCATE(:username,t.username) = 1")//,
@@ -36,6 +36,7 @@ public class UserTable implements Serializable{
         this.role = role;
     }
     public UserTable(){
+        //this.userId = 666;
         this.username = "admin";
         this.password = "admin";
         this.role = "admin";

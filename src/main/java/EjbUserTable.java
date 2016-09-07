@@ -3,7 +3,6 @@ import javax.faces.bean.ManagedBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-
 /**
  * @author Benjamin Olsson
  */
@@ -13,19 +12,12 @@ public class EjbUserTable {
     @PersistenceContext
     private EntityManager em;
 
-
     public UserTable validateUser(String username, String password){
-        UserTable userTable = (UserTable) em.createNamedQuery("validate").setParameter("username",username)
-                .setParameter("password", password).getSingleResult();
-        return userTable;
+        List<UserTable> userTables = (List<UserTable>) em.createNamedQuery("validate").setParameter("username",username)
+                .setParameter("password", password).getResultList();
+        return userTables.get(0);
     }
-    /*public void userAdd( UserClass p ) {
-        UserTable userTable = new UserTable();
-        userTable.setUsername(p.getUsername());
-        userTable.setPassword(p.getPassword());
-        userTable.setRole(p.getRole());
-        em.persist(userTable);
-    }*/
+
     public void dataEntryRemove( Long id) {
         UserTable table = em.find(UserTable.class, id);
         em.remove(table);
@@ -53,4 +45,3 @@ public class EjbUserTable {
         em.remove(userTable);
     }
 }
-
