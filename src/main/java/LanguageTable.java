@@ -25,10 +25,10 @@ public class LanguageTable implements Serializable {
     @Column(length = 30, name = "language", nullable = false)
     @NotNull
     @Size(min = 2, max = 30)
-    private String language;
+    private String name;
 
     public LanguageTable(String language) {
-        this.language = language;
+        this.name = language;
     }
     public LanguageTable() {}
 
@@ -41,10 +41,10 @@ public class LanguageTable implements Serializable {
     }
 
     public String getLanguage() {
-        return language;
+        return name;
     }
 
     public void setLanguage(String language) {
-        this.language = language;
+        this.name = language;
     }
 }

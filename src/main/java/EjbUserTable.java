@@ -1,5 +1,4 @@
 import javax.ejb.Stateless;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -39,6 +38,7 @@ public class EjbUserTable {
         userTable.setUsername(p.getUsername());
         userTable.setPassword(p.getPassword());
         userTable.setRole(p.getRole());
+
         userTable.setAdress(p.getAdress());
         userTable.setSex(p.getSex());
         userTable.setAge(p.getAge());

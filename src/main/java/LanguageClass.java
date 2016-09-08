@@ -6,10 +6,10 @@
 public class LanguageClass {
 
     private long languageId;
-    private String language;
+    private String name;
 
     public LanguageClass(String language) {
-        this.language = language;
+        this.name = language;
     }
     public LanguageClass() {}
 
@@ -22,10 +22,10 @@ public class LanguageClass {
     }
 
     public String getLanguage() {
-        return language;
+        return name;
     }
 
     public void setLanguage(String language) {
-        this.language = language;
+        this.name = language;
     }
 }

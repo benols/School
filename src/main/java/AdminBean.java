@@ -1,4 +1,3 @@
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -25,27 +24,33 @@ public class AdminBean implements Serializable {
     @Inject
     private EjbCourseTable courseService;
 
-    @PostConstruct
-    public void init() {
-        service.userAdd(user);
-        user.setUsername("admin");
-        user.setPassword("admin");
-        user.setRole("admin");
+//    @PostConstruct
+//    public void init() {
+//
+//        user.setUsername("admin");
+//        user.setPassword("admin");
+//        user.setRole("admin");
+//        user.setAdress("zadupie");
+//        user.setAge(18);
+//        user.setSex("Male");
+//        user.setContactDetails("blabla");
+//        user.setName("admin");
+//        service.userAdd(user);
     /*}
     @PostConstruct
     public void init() {*/
-        course.setName("tasedtg");
-        course.setMaxStudents(3);
+       // course.setName("tasedtg");
+        //course.setMaxStudents(3);
        // course.setLevelId(1);
        // course.setLanguageId(1);
-        course.setDuration("Yess");
-        course.setCourseId(666);
-        courseService.courseAdd(course);
+       // course.setDuration("Yess");
+       // course.setCourseId(666);
+       // courseService.courseAdd(course);
 
         /*user.setUsername("");
         user.setPassword("");
         user.setRole("");*/
-    }
+   // }
 
     public String remove(Long idRemove){
         service.dataEntryRemove(idRemove);
@@ -160,6 +165,8 @@ public class AdminBean implements Serializable {
     public void setAdress(String adress) {
         user.setAdress(adress);
     }
+
+
     //////////////////// COURSE ////////////////////////////////////////////////////////////
     public  String getCourseName(){
         return course.getName();
@@ -198,18 +205,18 @@ public class AdminBean implements Serializable {
         course.setMaxStudents(courseMaxStudents);
 
     }
-//    public int getCourseLanguageId(){
-//        return course.getLanguageId();
-//    }
-//    public void setCourseLanguageId(int courseLanguageId){
-//        course.setLanguageId(courseLanguageId);
-//    }
-//    public int getCourseLevelId(){
-//        return course.getLanguageId();
-//    }
-//    public void setCourseLevelId(int courseLevelId){
-//        course.setLevelId(courseLevelId);
-//    }
+    public LanguageTable getCourseLanguageId(){
+        return course.getLanguageId();
+    }
+    public void setCourseLanguageId(LanguageTable courseLanguageId){
+        course.setLanguageId(courseLanguageId);
+    }
+    public LevelTable getCourseLevelId(){
+        return course.getLevelId();
+    }
+    public void setCourseLevelId(LevelTable courseLevelId){
+        course.setLevelId(courseLevelId);
+    }
 
 
 }
