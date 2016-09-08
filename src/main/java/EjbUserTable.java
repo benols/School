@@ -1,5 +1,6 @@
 import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
  * @author Benjamin Olsson
  */
 @Stateless
-@ManagedBean
+@Named
 public class EjbUserTable {
     @PersistenceContext
     private EntityManager em;
@@ -38,6 +39,11 @@ public class EjbUserTable {
         userTable.setUsername(p.getUsername());
         userTable.setPassword(p.getPassword());
         userTable.setRole(p.getRole());
+        userTable.setAdress(p.getAdress());
+        userTable.setSex(p.getSex());
+        userTable.setAge(p.getAge());
+        userTable.setContactDetails(p.getContactDetails());
+        userTable.setName(p.getName());
         em.persist(userTable);
     }
     public void userRemove(Long id) {
