@@ -36,8 +36,8 @@ public class AdminBean implements Serializable {
     public void init() {*/
         course.setName("tasedtg");
         course.setMaxStudents(3);
-        course.setLevelId(1);
-        course.setLanguageId(1);
+       // course.setLevelId(1);
+       // course.setLanguageId(1);
         course.setDuration("Yess");
         course.setCourseId(666);
         courseService.courseAdd(course);
@@ -198,18 +198,18 @@ public class AdminBean implements Serializable {
         course.setMaxStudents(courseMaxStudents);
 
     }
-    public int getCourseLanguageId(){
-        return course.getLanguageId();
-    }
-    public void setCourseLanguageId(int courseLanguageId){
-        course.setLanguageId(courseLanguageId);
-    }
-    public int getCourseLevelId(){
-        return course.getLanguageId();
-    }
-    public void setCourseLevelId(int courseLevelId){
-        course.setLevelId(courseLevelId);
-    }
+//    public int getCourseLanguageId(){
+//        return course.getLanguageId();
+//    }
+//    public void setCourseLanguageId(int courseLanguageId){
+//        course.setLanguageId(courseLanguageId);
+//    }
+//    public int getCourseLevelId(){
+//        return course.getLanguageId();
+//    }
+//    public void setCourseLevelId(int courseLevelId){
+//        course.setLevelId(courseLevelId);
+//    }
 
 
 }

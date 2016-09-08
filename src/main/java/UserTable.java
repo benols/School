@@ -26,9 +26,22 @@ public class UserTable implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userId;
+    private String name;
     private String username;
     private String password;
     private String role;
+    private int age;
+    private String contactDetails;
+    private String sex;
+    private String adress;
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
 
     public UserTable(String username, String password, String role) {
         this.username = username;
@@ -72,5 +85,36 @@ public class UserTable implements Serializable{
 
     public void setRole(String role) {
         this.role = role;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getContactDetails() {
+        return contactDetails;
+    }
+
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }
