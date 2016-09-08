@@ -10,8 +10,8 @@ public class CourseClass {
     private String description;
     private String duration;
     private int maxStudents;
-    private int languageId;
-    private int levelId;
+    private long languageId;
+    private long levelId;
 
     public CourseClass(String courseCode, String name, String description, String duration, int maxStudents, int languageId, int levelId) {
 
@@ -74,7 +74,7 @@ public class CourseClass {
         this.maxStudents = maxStudents;
     }
 
-    public int getLanguageId() {
+    public long getLanguageId() {
         return languageId;
     }
 
@@ -82,7 +82,7 @@ public class CourseClass {
         this.languageId = languageId;
     }
 
-    public int getLevelId() {
+    public long getLevelId() {
         return levelId;
     }
 

@@ -18,16 +18,21 @@ public class CourseTable implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "courseId", updatable = false, nullable = false)
     private long courseId;
     private String courseCode;
     private String name;
     private String description;
     private String duration;
     private int maxStudents;
-    private int languageId;
-    private int levelId;
 
-    public CourseTable(String courseCode, String name, String description, String duration, int maxStudents, int languageId, int levelId) {
+    @ManyToOne
+    private LanguageTable languageId;
+
+    @ManyToOne
+    private LevelTable levelId;
+
+    public CourseTable(String courseCode, String name, String description, String duration, int maxStudents, LanguageTable languageId, LevelTable levelId) {
 
         this.courseCode = courseCode;
         this.name = name;
@@ -94,19 +99,19 @@ public class CourseTable implements Serializable{
         this.maxStudents = maxStudents;
     }
 
-    public int getLanguageId() {
+    public LanguageTable getlanguageId() {
         return languageId;
     }
 
-    public void setLanguageId(int languageId) {
+    public void setlanguageId(LanguageTable languageId) {
         this.languageId = languageId;
     }
 
-    public int getLevelId() {
+    public LevelTable getLevelId() {
         return levelId;
     }
 
-    public void setLevelId(int levelId) {
+    public void setLevelId(LevelTable levelId) {
         this.levelId = levelId;
     }
 }
