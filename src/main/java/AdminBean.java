@@ -1,6 +1,5 @@
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -13,17 +12,22 @@ import java.util.Map;
  */
 
 @Named
-@ManagedBean
+//@ManagedBean
 @SessionScoped
 public class AdminBean implements Serializable {
     //private UserClass user = new UserClass("admin", "admin", "admin");
     private UserClass user = new UserClass();
     private CourseClass course = new CourseClass();
+    private LanguageClass language = new LanguageClass();
+    //CourseClass course1 = new CourseClass();
+    //private Initialization initialization = new Initialization();
     //private EjbUserTable ejbUserTable = new EjbUserTable();
     @Inject
     private EjbUserTable service;
     @Inject
     private EjbCourseTable courseService;
+    @Inject
+    private EjbLanguageTable languageService;
 
     @PostConstruct
     public void init() {
@@ -34,17 +38,37 @@ public class AdminBean implements Serializable {
     /*}
     @PostConstruct
     public void init() {*/
-        course.setName("tasedtg");
-        course.setMaxStudents(3);
+        //course.setName("tasedtg");
+        //course.setMaxStudents(3);
        // course.setLevelId(1);
        // course.setLanguageId(1);
-        course.setDuration("Yess");
-        course.setCourseId(666);
-        courseService.courseAdd(course);
+        //course.setDuration("Yess");
+        //course.setCourseId(666);
+        //courseService.courseAdd(course);
 
         /*user.setUsername("");
         user.setPassword("");
         user.setRole("");*/
+        //Create language
+
+
+        //create level
+        /*LevelTable level1 = new LevelTable();
+        level1.setLevel("Beginner");
+        entitymanager.persist(level1);*/
+
+        //create course
+        //CourseClass course1 = new CourseClass();
+        /*course1.setCourseCode("01JavBeg");
+        course1.setName("Java for Beginners");
+        course1.setDescription("Java for Beginners course");
+        course1.setMaxStudents(15);
+        course1.setDuration("4 months");*/
+        //course1.setLevelId(new LevelTable("1"));
+        //course1.setLanguageId(new LanguageTable("1"));
+
+        //store course
+        //entitymanager.persist(course1);
     }
 
     public String remove(Long idRemove){
@@ -61,16 +85,24 @@ public class AdminBean implements Serializable {
         return "admin";
     }
 
-    public String edit(long id){
-        System.out.println("Adding");
+    public String editUser(long id){
+        System.out.println("Editing user");
         setUsername("");
         setPassword("");
-        return "editUser";
+        return "admin";
+    }
+
+    public String editCourse(long id){
+        System.out.println("Editing course");
+        setUsername("");
+        setPassword("");
+        return "admin";
     }
 
     public List<UserTable> getUserList(){
-        List<UserTable> ps = service.getAll("");
-        return ps;
+        //List<UserTable> ps = service.getAll("");
+        //return ps;
+        return service.getAllUsers("");
     }
 
     public String addUser(){
@@ -89,6 +121,12 @@ public class AdminBean implements Serializable {
         setRole("");
         setPassword("");*/
         return "admin";
+    }
+
+    public List<LanguageTable> getCourseLanguages(){
+        //List<LanguageTable> languagesList666 = languageService.getAllLanguages();
+        //return languagesList666;
+        return languageService.getAllLanguages();
     }
 
     public List<CourseTable> getCourseList(){
@@ -198,12 +236,12 @@ public class AdminBean implements Serializable {
         course.setMaxStudents(courseMaxStudents);
 
     }
-//    public int getCourseLanguageId(){
-//        return course.getLanguageId();
-//    }
-//    public void setCourseLanguageId(int courseLanguageId){
-//        course.setLanguageId(courseLanguageId);
-//    }
+    public int getLanguageId(){
+        return (int)language.getLanguageId();
+    }
+    public void setLanguageId(LanguageTable languageId){
+        course.setLanguageId(languageId);
+    }
 //    public int getCourseLevelId(){
 //        return course.getLanguageId();
 //    }

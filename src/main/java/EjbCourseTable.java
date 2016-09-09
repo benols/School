@@ -12,7 +12,7 @@ import java.util.List;
 @Stateless
 public class EjbCourseTable implements Serializable{
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     public CourseTable validateUser(String username, String password){
         List<CourseTable> courseTables = (List<CourseTable>) entityManager.createNamedQuery("validate").setParameter("username",username)

@@ -5,9 +5,6 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<!--<f:metadata>
-    <f:event type="preRenderView" listener="#{indexBean.getQuestion}"/>
-</f:metadata>-->
 <f:view>
     <h:form>
         <h:outputLabel value="Hello, admin"/>
@@ -55,10 +52,10 @@
             <h:outputLabel value="Users"/>
             <br/>
             <h:dataTable value="#{adminBean.userList}" var="p" >
-                <!--<h:column>
+                <h:column>
                     <f:facet name="header">UserId</f:facet>
-                    #{p.userid}
-                </h:column>-->
+                    #{p.userId}
+                </h:column>
                 <h:column>
                     <f:facet name="header">Name</f:facet>
                     #{p.name}
@@ -95,7 +92,7 @@
                     <h:commandButton value="Delete" action="#{adminBean.remove(p.userId)}"/>
                 </h:column>
                 <h:column>
-                    <h:commandButton value="Edit" action="#{adminBean.edit(p.userId)}"/>
+                    <h:commandButton value="Edit" action="#{adminBean.editUser(p.userId)}"/>
                 </h:column>
             </h:dataTable>
         </div>
@@ -115,23 +112,18 @@
             <h:outputLabel value="Description: "/>
             <h:inputText name="description: " value="#{adminBean.courseDescription}"/>
             <br/>
-            <h:outputLabel value="Level: "/>
-            <h:selectOneMenu   value="#{adminBean.courseLevelId}">
-                <f:selectItem    itemValue="prepair"    itemLabel="Prepair"   />
-                <f:selectItem    itemValue="bachelor"     itemLabel="Bachelor"  />
-                <f:selectItem    itemValue="master"    itemLabel="Master"   />
-                <f:selectItem    itemValue="phd"    itemLabel="PhD"   />
+            <h:outputLabel value="Language: "/>
+
+            <h:selectOneMenu value="#{adminBean.languageId}">
+                <f:selectItems value="#{adminBean.courseLanguages}" var="language"
+                           itemLabel="#{language.language}" itemValue="#{language.languageId}" />
             </h:selectOneMenu>
-            <br/>
-            <h:outputLabel value="Max Students: "/>
-            <h:inputText label="MaxStudents: " value="#{adminBean.courseMaxStudents}"/>
+
             <br/>
 
-            <h:outputLabel value="Language: "/>
-            <h:selectOneMenu   value="#{adminBean.courseLanguageId}">
-                <f:selectItem    itemValue="svenska"    itemLabel="Svenska"   />
-                <f:selectItem    itemValue="english"     itemLabel="English"  />
-            </h:selectOneMenu>
+
+
+
             <br/>
             <br/>
             <h:commandButton value="Add" action="#{adminBean.addCourse}"/>
@@ -139,13 +131,8 @@
 
 
         <div class="ViewCourse">
-            <h:outputText value="Add course"/>
-            <br/>
+
             <h:dataTable value="#{adminBean.courseList}" var="c" >
-                <!--<h:column>
-                    <f:facet name="header">UserId</f:facet>
-                    #{p.userid}
-                </h:column>-->
                 <h:column>
                     <f:facet name="header">Course name</f:facet>
                     #{c.name}
@@ -166,19 +153,12 @@
                     <f:facet name="header">Max Students</f:facet>
                     #{c.maxStudents}
                 </h:column>
-                <!--<h:column>
-                    <f:facet name="header">Period</f:facet>
-                    #{c.id}
-                </h:column>-->
-                <h:column>
-                    <f:facet name="header">Language</f:facet>
-                    #{c.languageId}
-                </h:column>
+
                 <h:column>
                     <h:commandButton value="Delete" action="#{adminBean.remove(p.userId)}"/>
                 </h:column>
                 <h:column>
-                    <h:commandButton value="Edit" action="#{adminBean.edit(p.userId)}"/>
+                    <h:commandButton value="Edit" action="#{adminBean.editCourse(p.userId)}"/>
                 </h:column>
             </h:dataTable>
         </div>
