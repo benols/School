@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="" />
+    <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="new tables">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -153,7 +155,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="tmp" />
+        <entry key="$PROJECT_DIR$" value="1707f6b4238ea6432404ff5821211c90d6162ba6" />
       </map>
     </option>
     <push-targets>
@@ -917,7 +919,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1473240871611</updated>
-      <workItem from="1473240872776" duration="35399000" />
+      <workItem from="1473240872776" duration="36732000" />
     </task>
     <task id="LOCAL-00001" summary="test update">
       <created>1473241498783</created>
@@ -1003,11 +1005,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473425014324</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="new tables">
+      <created>1473425268775</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1473425268775</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35399000" />
+    <option name="totallyTimeSpent" value="36732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
