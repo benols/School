@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author Benjamin Olsson
  */
-@Named
+
 @Stateless
 public class EjbCourseTable implements Serializable{
     @PersistenceContext

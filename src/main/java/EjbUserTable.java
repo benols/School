@@ -1,5 +1,4 @@
 import javax.ejb.Stateless;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -7,7 +6,6 @@ import java.util.List;
  * @author Benjamin Olsson
  */
 @Stateless
-@Named
 public class EjbUserTable {
     @PersistenceContext
     private EntityManager em;

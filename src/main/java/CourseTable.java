@@ -27,7 +27,7 @@ public class CourseTable implements Serializable{
     private int maxStudents;
 
     @ManyToOne
-    private LanguageTable languageId;
+    private LanguageTable languageTable;
 
     @ManyToOne
     private LevelTable levelId;
@@ -39,7 +39,7 @@ public class CourseTable implements Serializable{
         this.description = description;
         this.duration = duration;
         this.maxStudents = maxStudents;
-        this.languageId = languageId;
+        this.languageTable = languageId;
         this.levelId = levelId;
     }
 
@@ -100,11 +100,11 @@ public class CourseTable implements Serializable{
     }
 
     public LanguageTable getlanguageId() {
-        return languageId;
+        return languageTable;
     }
 
     public void setlanguageId(LanguageTable languageId) {
-        this.languageId = languageId;
+        this.languageTable = languageId;
     }
 
     public LevelTable getLevelId() {

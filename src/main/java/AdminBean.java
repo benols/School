@@ -164,6 +164,7 @@ public class AdminBean implements Serializable {
     }
 
     public void setName(String name) {
+        System.out.println("set name");
         user.setName(name);
     }
 
