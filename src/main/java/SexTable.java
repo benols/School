@@ -23,10 +23,10 @@ public class SexTable {
     @Column(length = 15, name = "sex", nullable = false)
     @NotNull
     @Size(min = 1, max = 15)
-    private String name;
+    private String sex;
 
     public SexTable(String sex) {
-        this.name = sex;
+        this.sex = sex;
     }
 
     public SexTable() {}
@@ -40,11 +40,11 @@ public class SexTable {
     }
 
     public String getSex() {
-        return name;
+        return sex;
     }
 
     public void setSex(String sex) {
-        this.name = sex;
+        this.sex = sex;
     }
 
 }

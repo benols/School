@@ -1,5 +1,4 @@
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -12,45 +11,65 @@ import java.util.Map;
  */
 
 @Named
-@ManagedBean
+//@ManagedBean
 @SessionScoped
 public class AdminBean implements Serializable {
     //private UserClass user = new UserClass("admin", "admin", "admin");
     private UserClass user = new UserClass();
-    private CourseClass course = new CourseClass();
+//    private CourseClass course = new CourseClass();
+//    private LanguageClass language = new LanguageClass();
+    private LevelClass level = new LevelClass();
+    //CourseClass course1 = new CourseClass();
+    //private Initialization initialization = new Initialization();
     //private EjbUserTable ejbUserTable = new EjbUserTable();
     @Inject
     private EjbUserTable service;
-    @Inject
-    private EjbCourseTable courseService;
+//    @Inject
+//    private EjbCourseTable courseService;
+//    @Inject
+//    private EjbLanguageTable languageService;
 
 //    @PostConstruct
 //    public void init() {
-//
+//        service.userAdd(user);
 //        user.setUsername("admin");
 //        user.setPassword("admin");
 //        user.setRole("admin");
-//        user.setAdress("zadupie");
-//        user.setAge(18);
-//        user.setSex("Male");
-//        user.setContactDetails("blabla");
-//        user.setName("admin");
-//        service.userAdd(user);
     /*}
     @PostConstruct
     public void init() {*/
-       // course.setName("tasedtg");
+        //course.setName("tasedtg");
         //course.setMaxStudents(3);
        // course.setLevelId(1);
        // course.setLanguageId(1);
-       // course.setDuration("Yess");
-       // course.setCourseId(666);
-       // courseService.courseAdd(course);
+        //course.setDuration("Yess");
+        //course.setCourseId(666);
+        //courseService.courseAdd(course);
 
         /*user.setUsername("");
         user.setPassword("");
         user.setRole("");*/
-   // }
+        //Create language
+
+
+        //create level
+        /*LevelTable level1 = new LevelTable();
+        level1.setLevel("Beginner");
+        entitymanager.persist(level1);*/
+
+        //create course
+        //CourseClass course1 = new CourseClass();
+        /*course1.setCourseCode("01JavBeg");
+        course1.setName("Java for Beginners");
+        course1.setDescription("Java for Beginners course");
+        course1.setMaxStudents(15);
+        course1.setDuration("4 months");*/
+        //course1.setLevelId(new LevelTable("1"));
+        //course1.setLanguageId(new LanguageTable("1"));
+
+        //store course
+        //entitymanager.persist(course1);
+    //}
 
     public String remove(Long idRemove){
         service.dataEntryRemove(idRemove);
@@ -66,16 +85,24 @@ public class AdminBean implements Serializable {
         return "admin";
     }
 
-    public String edit(long id){
-        System.out.println("Adding");
+    public String editUser(long id){
+        System.out.println("Editing user");
         setUsername("");
         setPassword("");
-        return "editUser";
+        return "admin";
     }
 
+//    public String editCourse(long id){
+//        System.out.println("Editing course");
+//        setUsername("");
+//        setPassword("");
+//        return "admin";
+//    }
+
     public List<UserTable> getUserList(){
-        List<UserTable> ps = service.getAll("");
-        return ps;
+        //List<UserTable> ps = service.getAll("");
+        //return ps;
+        return service.getAllUsers("");
     }
 
     public String addUser(){
@@ -87,19 +114,23 @@ public class AdminBean implements Serializable {
         return "admin";
     }
 
-    public String addCourse(){
-        //userClass = new UserClass(getUsername(),getPassword(), getRole());
-        courseService.courseAdd(course);
-        /*setUsername("");
-        setRole("");
-        setPassword("");*/
-        return "admin";
-    }
+//    public String addCourse(){
+//        //userClass = new UserClass(getUsername(),getPassword(), getRole());
+//        courseService.courseAdd(course);
+//        /*setUsername("");
+//        setRole("");
+//        setPassword("");*/
+//        return "admin";
+//    }
+//
+//
+//    public List<CourseTable> getCourseList(){
+//        return courseService.getAllCourses();
+//
+//    }
 
-    public List<CourseTable> getCourseList(){
-        List<CourseTable> cs = courseService.getAllCourses("");
-        return cs;
-    }
+
+
 
     //Setters ang getters for the user object
     public String getUsername() {
@@ -131,6 +162,7 @@ public class AdminBean implements Serializable {
     }
 
     public void setName(String name) {
+        System.out.println("set name");
         user.setName(name);
     }
 
@@ -167,56 +199,49 @@ public class AdminBean implements Serializable {
     }
 
 
-    //////////////////// COURSE ////////////////////////////////////////////////////////////
-    public  String getCourseName(){
-        return course.getName();
-    }
-    public void setCourseName(String courseName){
-        course.setName(courseName);
-    }
-    public  String getCourseCode(){
-        return course.getName();
-    }
-    public void setCourseCode(String courseCode){
-        course.setName(courseCode);
-    }
-    public Long getCourseId(){
-        return course.getCourseId();
-    }
-    public void setCourseId(String courseId){
-        course.setName(courseId);
-    }
-    public  String getCourseDescription(){
-        return course.getDescription();
-    }
-    public void setCourseDescription(String courseDescription){
-        course.setDescription(courseDescription);
-    }
-    public  String getCourseDuration(){
-        return course.getDuration();
-    }
-    public void setCourseDuration(String courseDuration){
-        course.setDuration(courseDuration);
-    }
-    public int getCourseMaxStudents(){
-        return course.getMaxStudents();
-    }
-    public void setCourseMaxStudents(int courseMaxStudents){
-        course.setMaxStudents(courseMaxStudents);
+//    //////////////////// COURSE ////////////////////////////////////////////////////////////
+//    public  String getCourseName(){
+//        return course.getName();
+//    }
+//    public void setCourseName(String courseName){
+//        course.setName(courseName);
+//    }
+//    public  String getCourseCode(){
+//        return course.getName();
+//    }
+//    public void setCourseCode(String courseCode){
+//        course.setName(courseCode);
+//    }
+//    public long getCourseId(){
+//        return course.getCourseId();
+//    }
+//    public void setCourseId(String courseId){
+//        course.setName(courseId);
+//    }
+//    public  String getCourseDescription(){
+//        return course.getDescription();
+//    }
+//    public void setCourseDescription(String courseDescription){
+//        course.setDescription(courseDescription);
+//    }
+//    public  String getCourseDuration(){
+//        return course.getDuration();
+//    }
+//    public void setCourseDuration(String courseDuration){
+//        course.setDuration(courseDuration);
+//    }
+//    public int getCourseMaxStudents(){
+//        return course.getMaxStudents();
+//    }
+//    public void setCourseMaxStudents(int courseMaxStudents){
+//        course.setMaxStudents(courseMaxStudents);
+//    }
 
-    }
-    public LanguageTable getCourseLanguageId(){
-        return course.getLanguageId();
-    }
-    public void setCourseLanguageId(LanguageTable courseLanguageId){
-        course.setLanguageId(courseLanguageId);
-    }
-    public LevelTable getCourseLevelId(){
-        return course.getLevelId();
-    }
-    public void setCourseLevelId(LevelTable courseLevelId){
-        course.setLevelId(courseLevelId);
-    }
+
+
+//    public long getCourseLevelId(){ return level.getLevelId();}
+//    public void setCourseLevelId(LevelTable courseLevelId){ course.setLevelId(courseLevelId);
+//    }
 
 
 }

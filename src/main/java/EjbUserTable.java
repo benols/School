@@ -1,5 +1,4 @@
 import javax.ejb.Stateless;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -7,7 +6,6 @@ import java.util.List;
  * @author Benjamin Olsson
  */
 @Stateless
-@Named
 public class EjbUserTable {
     @PersistenceContext
     private EntityManager em;
@@ -23,7 +21,7 @@ public class EjbUserTable {
         em.remove(table);
     }
 
-    public List<UserTable> getAll(String located) {
+    public List<UserTable> getAllUsers(String located) {
         List<UserTable> l;
         if (located.equals(""))
             l = em.createNamedQuery("selectAll").getResultList();
@@ -38,7 +36,6 @@ public class EjbUserTable {
         userTable.setUsername(p.getUsername());
         userTable.setPassword(p.getPassword());
         userTable.setRole(p.getRole());
-
         userTable.setAdress(p.getAdress());
         userTable.setSex(p.getSex());
         userTable.setAge(p.getAge());

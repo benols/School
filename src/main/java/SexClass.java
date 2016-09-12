@@ -5,10 +5,10 @@
  */
 public class SexClass {
     private long sexId;
-    private String name;
+    private String sex;
 
     public SexClass(String sex) {
-        this.name = sex;
+        this.sex = sex;
     }
 
     public SexClass() {}
@@ -23,10 +23,10 @@ public class SexClass {
     }
 
     public String getSex() {
-        return name;
+        return sex;
     }
 
     public void setSex(String sex) {
-        this.name = sex;
+        this.sex = sex;
     }
 }

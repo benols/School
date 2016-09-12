@@ -23,10 +23,10 @@ public class RoleTable {
     @Column(length = 20, name = "role", nullable = false)
     @NotNull
     @Size(min = 1, max = 20)
-    private String name;
+    private String role;
 
     public RoleTable(String role) {
-        this.name = role;
+        this.role = role;
     }
     public RoleTable(){}
 
@@ -39,10 +39,10 @@ public class RoleTable {
     }
 
     public String getRole() {
-        return name;
+        return role;
     }
 
     public void setRole(String role) {
-        this.name = role;
+        this.role = role;
     }
 }

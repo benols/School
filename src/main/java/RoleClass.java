@@ -6,10 +6,10 @@
 public class RoleClass {
 
     private long roleId;
-    private String name;
+    private String role;
 
     public RoleClass(String role) {
-        this.name = role;
+        this.role = role;
     }
     public RoleClass(){}
 
@@ -22,10 +22,10 @@ public class RoleClass {
     }
 
     public String getRole() {
-        return name;
+        return role;
     }
 
     public void setRole(String role) {
-        this.name = role;
+        this.role = role;
     }
 }
