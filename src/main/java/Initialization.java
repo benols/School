@@ -35,7 +35,7 @@ public class Initialization {
         course1.setMaxStudents(15);
         course1.setDuration("4 months");
         course1.setLevelId(level1);
-        course1.setlanguageId(language1);
+        course1.setLanguageId(language1);
 
         //store course
         entitymanager.persist(course1);

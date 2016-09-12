@@ -16,8 +16,8 @@ public class CourseBean implements Serializable{
     private CourseClass course = new CourseClass();
     @Inject
     private EjbLanguageTable languageService;
-//    @Inject
-//    private EjbCourseTable courseService;
+    @Inject
+    private EjbCourseTable courseService;
 
 
 
@@ -59,47 +59,47 @@ public class CourseBean implements Serializable{
 //    }
 
 
-//    public List<CourseTable> getCourseList(){
-//        return courseService.getAllCourses();
-//
-//    }
+    public List<CourseTable> getCourseList(){
+        return courseService.getAllCourses();
+
+    }
 
 
-    //////////////////// COURSE ////////////////////////////////////////////////////////////
-//    public  String getCourseName(){
-//        return course.getName();
-//    }
-//    public void setCourseName(String courseName){
-//        course.setName(courseName);
-//    }
-//    public  String getCourseCode(){
-//        return course.getName();
-//    }
-//    public void setCourseCode(String courseCode){
-//        course.setName(courseCode);
-//    }
-//    public long getCourseId(){
-//        return course.getCourseId();
-//    }
-//    public void setCourseId(String courseId){
-//        course.setName(courseId);
-//    }
-//    public  String getCourseDescription(){
-//        return course.getDescription();
-//    }
-//    public void setCourseDescription(String courseDescription){
-//        course.setDescription(courseDescription);
-//    }
-//    public  String getCourseDuration(){
-//        return course.getDuration();
-//    }
-//    public void setCourseDuration(String courseDuration){
-//        course.setDuration(courseDuration);
-//    }
-//    public int getCourseMaxStudents(){
-//        return course.getMaxStudents();
-//    }
-//    public void setCourseMaxStudents(int courseMaxStudents){
-//        course.setMaxStudents(courseMaxStudents);
-//    }
+    ////////////////// COURSE ////////////////////////////////////////////////////////////
+    public  String getCourseName(){
+        return course.getName();
+    }
+    public void setCourseName(String courseName){
+        course.setName(courseName);
+    }
+    public  String getCourseCode(){
+        return course.getName();
+    }
+    public void setCourseCode(String courseCode){
+        course.setName(courseCode);
+    }
+    public long getCourseId(){
+        return course.getCourseId();
+    }
+    public void setCourseId(String courseId){
+        course.setName(courseId);
+    }
+    public  String getCourseDescription(){
+        return course.getDescription();
+    }
+    public void setCourseDescription(String courseDescription){
+        course.setDescription(courseDescription);
+    }
+    public  String getCourseDuration(){
+        return course.getDuration();
+    }
+    public void setCourseDuration(String courseDuration){
+        course.setDuration(courseDuration);
+    }
+    public int getCourseMaxStudents(){
+        return course.getMaxStudents();
+    }
+    public void setCourseMaxStudents(int courseMaxStudents){
+        course.setMaxStudents(courseMaxStudents);
+    }
 }

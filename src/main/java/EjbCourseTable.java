@@ -27,7 +27,7 @@ public class EjbCourseTable implements Serializable{
     public List<CourseTable> getAllCourses() {
         List<CourseTable> l;
        // if (located.equals(""))
-            l = entityManager.createNamedQuery("selectAllCoursesNames").getResultList();
+            l = entityManager.createNamedQuery("selectAllCourses").getResultList();
 //        else
 //            l = entityManager.createNamedQuery("selectOneCourse").setParameter("id",located).getResultList();
 
@@ -41,7 +41,7 @@ public class EjbCourseTable implements Serializable{
         courseTable.setCourseId(p.getCourseId());
         courseTable.setDescription(p.getDescription());
         courseTable.setDuration(p.getDuration());
-        courseTable.setlanguageId(p.getLanguageId());
+        courseTable.setLanguageId(p.getLanguageId());
         courseTable.setLevelId(p.getLevelId());
         courseTable.setMaxStudents(p.getMaxStudents());
         entityManager.persist(courseTable);

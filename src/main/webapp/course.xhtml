@@ -40,7 +40,38 @@
         <br/>
         <br/>
 
+        <div class="ViewCourse">
 
+        <h:dataTable value="#{courseBean.courseList}" var="c" >
+        <h:column>
+        <f:facet name="header">Course Id</f:facet>
+        #{c.courseId}
+        </h:column>
+        <h:column>
+        <f:facet name="header">Course code</f:facet>
+        #{c.courseCode}
+        </h:column>
+        <h:column>
+        <f:facet name="header">Name</f:facet>
+        #{c.name}
+        </h:column>
+            <h:column>
+                <f:facet name="header">Max Students</f:facet>
+                #{c.maxStudents}
+            </h:column>
+
+            <h:column>
+            <f:facet name="header">Level</f:facet>
+            #{c.levelId}
+            </h:column>
+            <h:column>
+            <f:facet name="header">language</f:facet>
+            #{c.languageId}
+            </h:column>
+
+
+        </h:dataTable>
+        </div>
 
     </h:form>
     <br/>
