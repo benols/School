@@ -997,7 +997,7 @@
       <updated>1473240871611</updated>
       <workItem from="1473240872776" duration="38552000" />
       <workItem from="1473663869444" duration="286000" />
-      <workItem from="1473664264556" duration="49824000" />
+      <workItem from="1473664264556" duration="49879000" />
     </task>
     <task id="LOCAL-00001" summary="test update">
       <created>1473241498783</created>
@@ -1132,11 +1132,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473861615831</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="adding courses working!!">
+      <created>1473861685836</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1473861685836</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88662000" />
+    <option name="totallyTimeSpent" value="88717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1207,7 +1214,8 @@
     <MESSAGE value="new tables" />
     <MESSAGE value="working listing language list not working course listing yet" />
     <MESSAGE value="working listing languages, course listing almost working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working listing languages, course listing almost working" />
+    <MESSAGE value="adding courses working!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding courses working!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
