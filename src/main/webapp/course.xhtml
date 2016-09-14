@@ -10,7 +10,6 @@
         <h:outputLabel value="Course management"/>
         <br/>
         <br/>
-
         <div class="VievLanguages">
             <h:outputLabel value="Languages" />
             <br/>
@@ -28,17 +27,24 @@
         <br/>
         <br/>
 
+
         <div class="Add language">
             <h:outputLabel value="Add language: "/>
             <br/>
             <h:outputLabel value="language: "/>
-            <h:inputText label="Language" value="#{courseBean.language}"/>
+            <h:inputText label="Language" value="#{courseBean.languageName}"/>
             <br/>
 
             <h:commandButton value="Add" action="#{courseBean.addLanguage}"/>
         </div>
         <br/>
         <br/>
+        <div class="lang list">
+            <h:selectOneListbox value="#{courseBean.languageName}" >
+                <f:selectItems Value="#{courseBean.languagesList}" var = "l" itemValue="l.language"/>
+                #{l.language}
+            </h:selectOneListbox>
+        </div>
 
         <div class="ViewCourse">
 
@@ -71,7 +77,12 @@
 
 
         </h:dataTable>
+
+            <h:dataTable value="#{courseBean.courseList2}" var="c2" >
+
+            </h:dataTable>
         </div>
+
 
     </h:form>
     <br/>

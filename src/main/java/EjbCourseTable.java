@@ -24,12 +24,15 @@ public class EjbCourseTable implements Serializable{
         entityManager.remove(table);
     }
 
-    public List<CourseTable> getAllCourses() {
+    public List<CourseTable> getAllCourses(String located) {
         List<CourseTable> l;
-       // if (located.equals(""))
-            l = entityManager.createNamedQuery("selectAllCourses").getResultList();
-//        else
-//            l = entityManager.createNamedQuery("selectOneCourse").setParameter("id",located).getResultList();
+        if (located.equals(""))
+            l = entityManager.createNamedQuery("SelectWithJoin").getResultList();
+        else
+            l = entityManager.createNamedQuery("selectAllCourses2").getResultList();
+        for(Object p:l){
+            System.err.println(p);
+        }
 
         return l;
     }

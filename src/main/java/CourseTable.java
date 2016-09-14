@@ -11,7 +11,8 @@ import java.io.Serializable;
 @Table(name = "CourseTable")
 @NamedQueries({
         @NamedQuery(name="selectAllCourses",query="SELECT t FROM CourseTable t"),
-        @NamedQuery(name="selectAllCoursesNames",query="SELECT t.name  FROM CourseTable t")
+        @NamedQuery(name="selectAllCourses2",query="SELECT c, l  FROM CourseTable c, LanguageTable l WHERE l = c.languageId"),
+        @NamedQuery(name = "SelectWithJoin", query = "SELECT c FROM CourseTable c left JOIN fetch c.languageId a WHERE a = c.languageId")
 
 })
 
