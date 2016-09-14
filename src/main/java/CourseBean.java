@@ -14,14 +14,18 @@ import java.util.List;
 public class CourseBean implements Serializable{
     private LanguageClass language = new LanguageClass();
     private CourseClass course = new CourseClass();
+    private LevelClass level = new LevelClass();
     @Inject
     private EjbLanguageTable languageService;
     @Inject
     private EjbCourseTable courseService;
+    @Inject
+    private EjbLevelTable levelService;
 
 
 
-    // language list
+    /////////////////////////language//////////////////////
+
     public List<LanguageTable> getLanguagesList(){
         //List<LanguageTable> languagesList666 = languageService.getAllLanguages();
         //return languagesList666;
@@ -37,9 +41,11 @@ public class CourseBean implements Serializable{
     public long getLanguageId(){
         return language.getLanguageId();
     }
-    //    public void setLanguageId(LanguageTable languageId){
-//        course.setLanguageId(languageId);
-//    }
+
+    public void setLanguageId(long languageId){
+        language.setLanguageId(languageId);
+    }
+
     public String getLanguageName() {
         return language.getLanguage();
     }
@@ -49,15 +55,40 @@ public class CourseBean implements Serializable{
     }
 
 
-//    public String addCourse(){
-//        //userClass = new UserClass(getUsername(),getPassword(), getRole());
-//        courseService.courseAdd(course);
-//        /*setUsername("");
-//        setRole("");
-//        setPassword("");*/
-//        return "admin";
-//    }
+    ////////////////////////level//////////////////////////
+    public List<LevelTable> getLevelsList(){
+        return levelService.getAllLevelss();
+    }
 
+    public String addLevel(){
+        levelService.addLevel(level);
+        return "course";
+    }
+
+    public long getLevelId() {
+        return level.getLevelId();
+    }
+
+    public void setLevelId(long levelId) {
+        level.setLevelId(levelId);
+    }
+
+    public String getLevel() {
+        return level.getLevel();
+    }
+
+    public void setLevel(String levelName) {
+        level.setLevel(levelName);
+    }
+
+
+    ////////////////// COURSE ////////////////////////////////////////////////////////////
+    public String addCourse(){
+        //userClass = new UserClass(getUsername(),getPassword(), getRole());
+        courseService.courseAdd(course, language, level);
+
+        return "course";
+    }
 
     public List<CourseTable> getCourseList(){
         return courseService.getAllCourses("");
@@ -68,9 +99,6 @@ public class CourseBean implements Serializable{
 
     }
 
-
-
-    ////////////////// COURSE ////////////////////////////////////////////////////////////
     public  String getCourseName(){
         return course.getName();
     }
@@ -78,16 +106,16 @@ public class CourseBean implements Serializable{
         course.setName(courseName);
     }
     public  String getCourseCode(){
-        return course.getName();
+        return course.getCourseCode();
     }
     public void setCourseCode(String courseCode){
-        course.setName(courseCode);
+        course.setCourseCode(courseCode);
     }
     public long getCourseId(){
         return course.getCourseId();
     }
-    public void setCourseId(String courseId){
-        course.setName(courseId);
+    public void setCourseId(long courseId){
+        course.setCourseId(courseId);
     }
     public  String getCourseDescription(){
         return course.getDescription();
@@ -107,4 +135,6 @@ public class CourseBean implements Serializable{
     public void setCourseMaxStudents(int courseMaxStudents){
         course.setMaxStudents(courseMaxStudents);
     }
+
+
 }

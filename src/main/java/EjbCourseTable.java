@@ -37,15 +37,21 @@ public class EjbCourseTable implements Serializable{
         return l;
     }
 
-    public void courseAdd(CourseClass p) {
+    public void courseAdd(CourseClass p, LanguageClass l, LevelClass level) {
         CourseTable courseTable = new CourseTable();
+
+        LanguageTable lan = entityManager.find(LanguageTable.class, l.getLanguageId());
+        LevelTable lev = entityManager.find(LevelTable.class, level.getLevelId());
+
+
         courseTable.setName(p.getName());
         courseTable.setCourseCode(p.getCourseCode());
         courseTable.setCourseId(p.getCourseId());
         courseTable.setDescription(p.getDescription());
         courseTable.setDuration(p.getDuration());
-        courseTable.setLanguageId(p.getLanguageId());
-        courseTable.setLevelId(p.getLevelId());
+
+        courseTable.setLanguageId(lan);
+        courseTable.setLevelId(lev);
         courseTable.setMaxStudents(p.getMaxStudents());
         entityManager.persist(courseTable);
     }

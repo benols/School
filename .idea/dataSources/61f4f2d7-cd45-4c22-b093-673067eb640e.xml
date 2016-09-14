@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Derby (Remote) - school@localhost">
   <database-model serializer="dbm" rdbms="DERBY" format-version="2.6">
     <schema id="1" name="APP">
@@ -6,24 +7,24 @@
     <schema id="2" name="ADMIN">
       <visible>1</visible>
     </schema>
-    <schema id="3" name="NULLID" />
-    <schema id="4" name="SQLJ" />
-    <schema id="5" name="SYS" />
-    <schema id="6" name="SYSCAT" />
-    <schema id="7" name="SYSCS_DIAG" />
-    <schema id="8" name="SYSCS_UTIL" />
-    <schema id="9" name="SYSFUN" />
-    <schema id="10" name="SYSIBM" />
-    <schema id="11" name="SYSPROC" />
-    <schema id="12" name="SYSSTAT" />
-    <table id="13" parent="2" name="COURSETABLE" />
-    <table id="14" parent="2" name="LANGUAGETABLE" />
-    <table id="15" parent="2" name="LEVELTABLE" />
-    <table id="16" parent="2" name="ROLETABLE" />
-    <table id="17" parent="2" name="SEMESTERTABLE" />
-    <table id="18" parent="2" name="SEQUENCE" />
-    <table id="19" parent="2" name="SEXTABLE" />
-    <table id="20" parent="2" name="USERTABLE" />
+    <schema id="3" name="NULLID"/>
+    <schema id="4" name="SQLJ"/>
+    <schema id="5" name="SYS"/>
+    <schema id="6" name="SYSCAT"/>
+    <schema id="7" name="SYSCS_DIAG"/>
+    <schema id="8" name="SYSCS_UTIL"/>
+    <schema id="9" name="SYSFUN"/>
+    <schema id="10" name="SYSIBM"/>
+    <schema id="11" name="SYSPROC"/>
+    <schema id="12" name="SYSSTAT"/>
+    <table id="13" parent="2" name="COURSETABLE"/>
+    <table id="14" parent="2" name="LANGUAGETABLE"/>
+    <table id="15" parent="2" name="LEVELTABLE"/>
+    <table id="16" parent="2" name="ROLETABLE"/>
+    <table id="17" parent="2" name="SEMESTERTABLE"/>
+    <table id="18" parent="2" name="SEQUENCE"/>
+    <table id="19" parent="2" name="SEXTABLE"/>
+    <table id="20" parent="2" name="USERTABLE"/>
     <column id="21" parent="13" name="COURSEID">
       <mandatory>1</mandatory>
       <data-type>BIGINT(19)|-5</data-type>

@@ -24,6 +24,7 @@ public class AdminBean implements Serializable {
     //private EjbUserTable ejbUserTable = new EjbUserTable();
     @Inject
     private EjbUserTable service;
+
 //    @Inject
 //    private EjbCourseTable courseService;
 //    @Inject
@@ -133,6 +134,10 @@ public class AdminBean implements Serializable {
 
 
     //Setters ang getters for the user object
+//    public UserClass getUser(){
+//        return user;
+//    }
+
     public String getUsername() {
         return user.getUsername();
     }
