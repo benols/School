@@ -146,16 +146,31 @@
       <mandatory>1</mandatory>
       <data-type>BIGINT(19)|-5</data-type>
     </column>
-    <column id="53" parent="20" name="PASSWORD">
+    <column id="53" parent="20" name="ADRESS">
       <data-type>VARCHAR(255)|12</data-type>
     </column>
-    <column id="54" parent="20" name="ROLE">
+    <column id="54" parent="20" name="AGE">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="55" parent="20" name="CONTACTDETAILS">
       <data-type>VARCHAR(255)|12</data-type>
     </column>
-    <column id="55" parent="20" name="USERNAME">
+    <column id="56" parent="20" name="NAME">
       <data-type>VARCHAR(255)|12</data-type>
     </column>
-    <key id="56" parent="20" name="SQL160831102315460">
+    <column id="57" parent="20" name="PASSWORD">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="58" parent="20" name="ROLE">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="59" parent="20" name="SEX">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="60" parent="20" name="USERNAME">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <key id="61" parent="20" name="SQL160908134759170">
       <name-surrogate>1</name-surrogate>
       <columns>USERID</columns>
       <primary>1</primary>

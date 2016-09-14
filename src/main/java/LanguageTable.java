@@ -47,4 +47,8 @@ public class LanguageTable implements Serializable {
     public void setLanguage(String language) {
         this.language = language;
     }
+    /*@Override
+    public String toString(){
+        return getLanguage();
+    }*/
 }

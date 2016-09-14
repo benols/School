@@ -1,4 +1,3 @@
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
@@ -18,13 +17,13 @@ public class LoginBean implements Serializable{
     @Inject
     private EjbUserTable service;
 
-    @PostConstruct
-    public void init() {
-        service.userAdd(user);
-        user.setUsername("");
-        user.setPassword("");
-        user.setRole("");
-    }
+   // @PostConstruct
+//    public void init() {
+//        service.userAdd(user);
+//        user.setUsername("");
+//        user.setPassword("");
+//        user.setRole("");
+//    }
 
     public String validateLogin(){
         UserTable userTable = service.validateUser(getUsername(), getPassword());

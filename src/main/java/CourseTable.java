@@ -10,7 +10,8 @@ import java.io.Serializable;
 @Entity
 @Table(name = "CourseTable")
 @NamedQueries({
-        @NamedQuery(name="selectAllCourses",query="SELECT t FROM CourseTable t")
+        @NamedQuery(name="selectAllCourses",query="SELECT t FROM CourseTable t"),
+        @NamedQuery(name="selectAllCoursesNames",query="SELECT t.name  FROM CourseTable t")
 
 })
 
@@ -27,9 +28,11 @@ public class CourseTable implements Serializable{
     private int maxStudents;
 
     @ManyToOne
+    @JoinColumn(name="LANGUAGEID")
     private LanguageTable languageId;
 
     @ManyToOne
+    @JoinColumn(name="LEVELID")
     private LevelTable levelId;
 
     public CourseTable(String courseCode, String name, String description, String duration, int maxStudents, LanguageTable languageId, LevelTable levelId) {
@@ -99,11 +102,11 @@ public class CourseTable implements Serializable{
         this.maxStudents = maxStudents;
     }
 
-    public LanguageTable getlanguageId() {
+    public LanguageTable getLanguageId() {
         return languageId;
     }
 
-    public void setlanguageId(LanguageTable languageId) {
+    public void setLanguageId(LanguageTable languageId) {
         this.languageId = languageId;
     }
 

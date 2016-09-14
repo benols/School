@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <h:outputLabel value="Course management"/>
+        <br/>
+        <br/>
+
+        <div class="VievLanguages">
+            <h:outputLabel value="Languages" />
+            <br/>
+            <h:dataTable value="#{courseBean.languagesList}" var="l">
+                <h:column>
+                    <f:facet name="Id">LanguageId</f:facet>
+                    #{l.languageId}
+                </h:column>
+                <h:column>
+                    <f:facet name="Language">Language</f:facet>
+                    #{l.language}
+                </h:column>
+            </h:dataTable>
+        </div>
+        <br/>
+        <br/>
+
+        <div class="Add language">
+            <h:outputLabel value="Add language: "/>
+            <br/>
+            <h:outputLabel value="language: "/>
+            <h:inputText label="Language" value="#{courseBean.language}"/>
+            <br/>
+
+            <h:commandButton value="Add" action="#{courseBean.addLanguage}"/>
+        </div>
+        <br/>
+        <br/>
+
+        <div class="ViewCourse">
+
+        <h:dataTable value="#{courseBean.courseList}" var="c" >
+        <h:column>
+        <f:facet name="header">Course Id</f:facet>
+        #{c.courseId}
+        </h:column>
+        <h:column>
+        <f:facet name="header">Course code</f:facet>
+        #{c.courseCode}
+        </h:column>
+        <h:column>
+        <f:facet name="header">Name</f:facet>
+        #{c.name}
+        </h:column>
+            <h:column>
+                <f:facet name="header">Max Students</f:facet>
+                #{c.maxStudents}
+            </h:column>
+
+            <h:column>
+            <f:facet name="header">Level</f:facet>
+            #{c.levelId}
+            </h:column>
+            <h:column>
+            <f:facet name="header">language</f:facet>
+            #{c.languageId}
+            </h:column>
+
+
+        </h:dataTable>
+        </div>
+
+    </h:form>
+    <br/>
+    <a href="admin.xhtml">Back to admin page</a>
+    <br/>
+</f:view>
+</html>
