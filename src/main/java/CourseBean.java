@@ -40,11 +40,11 @@ public class CourseBean implements Serializable{
     //    public void setLanguageId(LanguageTable languageId){
 //        course.setLanguageId(languageId);
 //    }
-    public String getLanguage() {
+    public String getLanguageName() {
         return language.getLanguage();
     }
 
-    public void setLanguage(String lan) {
+    public void setLanguageName(String lan) {
         language.setLanguage(lan);
     }
 
@@ -60,9 +60,14 @@ public class CourseBean implements Serializable{
 
 
     public List<CourseTable> getCourseList(){
-        return courseService.getAllCourses();
+        return courseService.getAllCourses("");
 
     }
+    public List<CourseTable> getCourseList2(){
+        return courseService.getAllCourses("sdfsd");
+
+    }
+
 
 
     ////////////////// COURSE ////////////////////////////////////////////////////////////
