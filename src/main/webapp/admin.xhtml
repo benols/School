@@ -25,28 +25,28 @@
             <h:outputLabel value="Password: "/>
             <h:inputText label="Password: " value="#{adminBean.password}"/>
             <br/>
+            <h:outputLabel value="Role: "/>
+            <h:selectOneMenu   value="#{adminBean.role}">
+                <f:selectItem    itemValue="student"     itemLabel="Student"  />
+                <f:selectItem    itemValue="teacher"    itemLabel="Teacher"   />
+                <f:selectItem    itemValue="admin"   itemLabel="Admin"   />
+            </h:selectOneMenu>
+            <br/>
+            <h:outputLabel value="Email: "/>
+            <h:inputText label="Email: " value="#{adminBean.email}"/>
+            <br/>
             <h:outputLabel value="Address: "/>
             <h:inputText label="Address: " value="#{adminBean.adress}"/>
             <br/>
             <h:outputLabel value="Contact details: "/>
             <h:inputText label="Contact details: " value="#{adminBean.contactDetails}"/>
             <br/>
-            <h:outputLabel value="Age: "/>
-            <h:inputText label="Age: " value="#{adminBean.age}"/>
-            <br/>
             <h:outputLabel value="Sex: "/>
-            <h:selectOneMenu   value="#{adminBean.sex}">
-                <f:selectItem    itemValue="male"     itemLabel="Male"  />
-                <f:selectItem    itemValue="female"    itemLabel="Female"   />
+            <h:selectOneMenu value="#{adminBean.sexId}">
+                <f:selectItems value="#{adminBean.sexList}" var="s" itemLabel="#{s.sex}" itemValue="#{s.sexId}" />
             </h:selectOneMenu>
             <br/>
-            <h:outputLabel value="Role: "/>
 
-            <h:selectOneMenu   value="#{adminBean.role}">
-                <f:selectItem    itemValue="student"     itemLabel="Student"  />
-                <f:selectItem    itemValue="teacher"    itemLabel="Teacher"   />
-                <f:selectItem    itemValue="admin"   itemLabel="Admin"   />
-            </h:selectOneMenu>
             <br/>
             <h:commandButton value="Add" action="#{adminBean.addUser}"/>
         </div>
@@ -79,10 +79,7 @@
                     <f:facet name="header">Contact details</f:facet>
                     #{p.contactDetails}
                 </h:column>
-                <h:column>
-                    <f:facet name="header">Age</f:facet>
-                    #{p.age}
-                </h:column>
+
                 <h:column>
                     <f:facet name="header">Sex</f:facet>
                     #{p.sex}
@@ -102,7 +99,9 @@
         <br/>
         <br/>
 
-
+        <a href="sex.xhtml">Add sex</a>
+        <br/>
+        <a href="role.xhtml">Add role</a>
     </h:form>
 </f:view>
 </html>

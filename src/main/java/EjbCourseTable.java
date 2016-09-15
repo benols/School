@@ -13,12 +13,6 @@ public class EjbCourseTable implements Serializable{
     @PersistenceContext
     private EntityManager entityManager;
 
-//    public CourseTable validateUser(String username, String password){
-//        List<CourseTable> courseTables = (List<CourseTable>) entityManager.createNamedQuery("validate").setParameter("username",username)
-//                .setParameter("password", password).getResultList();
-//        return courseTables.get(0);
-//    }
-
     public void dataEntryRemove( Long id) {
         CourseTable table = entityManager.find(CourseTable.class, id);
         entityManager.remove(table);

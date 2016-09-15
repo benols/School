@@ -31,18 +31,22 @@ public class EjbUserTable {
         return l;
     }
 
-    public void userAdd( UserClass p ) {
+    public void userAdd( UserClass p, SexClass s ) {
         UserTable userTable = new UserTable();
+
+        SexTable sex = em.find(SexTable.class, s.getSexId());
+
         userTable.setUsername(p.getUsername());
         userTable.setPassword(p.getPassword());
         userTable.setRole(p.getRole());
         userTable.setAdress(p.getAdress());
-        userTable.setSex(p.getSex());
-        userTable.setAge(p.getAge());
+        userTable.setSex(sex);
+        userTable.setBirthDate(p.getBirthDate());
         userTable.setContactDetails(p.getContactDetails());
         userTable.setName(p.getName());
         em.persist(userTable);
     }
+
     public void userRemove(Long id) {
         UserTable userTable = em.find(UserTable.class, id);
         em.remove(userTable);

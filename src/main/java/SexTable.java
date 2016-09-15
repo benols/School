@@ -1,6 +1,7 @@
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Collection;
 
 /**
  * Created by:
@@ -47,4 +48,14 @@ public class SexTable {
         this.sex = sex;
     }
 
+    @OneToMany(mappedBy = "sex")
+    private Collection<UserTable> userTable;
+
+    public Collection<UserTable> getUserTable() {
+        return userTable;
+    }
+
+    public void setUserTable(Collection<UserTable> userTable) {
+        this.userTable = userTable;
+    }
 }

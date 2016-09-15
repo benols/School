@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <h:outputLabel value="Role"/>
+        <br/>
+        <br/>
+        <div class="table-view">
+            <h:outputLabel value="Role" />
+            <br/>
+            <h:dataTable value="#{adminBean.roleList}" var="r">
+                <h:column>
+                    <f:facet name="Id">RoleId</f:facet>
+                    #{r.roleId}
+                </h:column>
+                <h:column>
+                    <f:facet name="Role">Role</f:facet>
+                    #{r.role}
+                </h:column>
+            </h:dataTable>
+        </div>
+        <br/>
+        <br/>
+
+
+        <div class="table-view">
+            <h:outputLabel value="Add Role: "/>
+            <br/>
+            <h:outputLabel value="role: "/>
+            <h:inputText label="Role" value="#{adminBean.roleName}"/>
+            <br/>
+            <h:commandButton value="Add" action="#{adminBean.addRole}"/>
+        </div>
+        <br/>
+        <br/>
+        <div class="table-view">
+            <h:outputLabel value="Role list: "/>
+            <h:selectOneMenu value="#{adminBean.roleId}">
+                <f:selectItems value="#{adminBean.roleList}" var="ro"
+                               itemLabel="#{ro.role}" itemValue="#{ro.roleId}" />
+            </h:selectOneMenu>
+        </div>
+
+
+        <br/>
+        <a href="admin.xhtml">Back to admin page</a>
+        <br/>
+    </h:form>
+</f:view>
+</html>

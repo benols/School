@@ -1,5 +1,6 @@
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author Benjamin Olsson
@@ -25,17 +26,21 @@ import java.io.Serializable;
 public class UserTable implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "userId", updatable = false, nullable = false)
     private long userId;
+
     private String name;
     private String username;
     private String password;
     private String role;
-    private int age;
+    private String email;
+    private Date birthDate;
     private String contactDetails;
-    private String sex;
     private String adress;
 
-
+    @ManyToOne
+    @JoinColumn(name="SEXID")
+    private SexTable sex;
 
     public UserTable(String username, String password, String role) {
         this.username = username;
@@ -43,15 +48,14 @@ public class UserTable implements Serializable{
         this.role = role;
     }
     public UserTable(){
-        //this.userId = 666;
         this.name = "adamina";
         this.username = "admin";
         this.password = "admin";
         this.role = "admin";
         this.adress = "adminstrasse 1";
-        this.age = 69;
+        this.birthDate = new Date(01-01-1990);
         this.contactDetails = "call me";
-        this.sex = "male";
+
     }
 
     public String getPassword() {
@@ -93,12 +97,12 @@ public class UserTable implements Serializable{
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(Date date) {
+        this.birthDate = date;
     }
 
     public String getContactDetails() {
@@ -109,11 +113,11 @@ public class UserTable implements Serializable{
         this.contactDetails = contactDetails;
     }
 
-    public String getSex() {
+    public SexTable getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(SexTable sex) {
         this.sex = sex;
     }
 
@@ -123,5 +127,13 @@ public class UserTable implements Serializable{
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

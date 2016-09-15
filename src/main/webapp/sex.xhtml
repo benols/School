@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <h:outputLabel value="Sex"/>
+        <br/>
+        <br/>
+        <div class="VievSex">
+            <h:outputLabel value="Sex" />
+            <br/>
+            <h:dataTable value="#{adminBean.sexList}" var="s">
+                <h:column>
+                    <f:facet name="Id">SexId</f:facet>
+                    #{s.sexId}
+                </h:column>
+                <h:column>
+                    <f:facet name="Sex">Sex</f:facet>
+                    #{s.sex}
+                </h:column>
+            </h:dataTable>
+        </div>
+        <br/>
+        <br/>
+
+
+        <div class="Add Sex">
+            <h:outputLabel value="Add Sex: "/>
+            <br/>
+            <h:outputLabel value="sex: "/>
+            <h:inputText label="Sex" value="#{adminBean.sexName}"/>
+            <br/>
+            <h:commandButton value="Add" action="#{adminBean.addSex}"/>
+        </div>
+        <br/>
+        <br/>
+        <div class="lang list">
+            <h:outputLabel value="Sex list: "/>
+            <h:selectOneMenu value="#{adminBean.sexId}">
+                <f:selectItems value="#{adminBean.sexList}" var="sex"
+                               itemLabel="#{sex.sex}" itemValue="#{sex.sexId}" />
+            </h:selectOneMenu>
+        </div>
+
+
+    <br/>
+    <a href="admin.xhtml">Back to admin page</a>
+    <br/>
+    </h:form>
+</f:view>
+</html>

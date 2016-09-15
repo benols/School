@@ -27,8 +27,6 @@ public class CourseBean implements Serializable{
     /////////////////////////language//////////////////////
 
     public List<LanguageTable> getLanguagesList(){
-        //List<LanguageTable> languagesList666 = languageService.getAllLanguages();
-        //return languagesList666;
         return languageService.getAllLanguages();
     }
 
