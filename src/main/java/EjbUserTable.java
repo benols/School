@@ -13,6 +13,9 @@ public class EjbUserTable {
     public UserTable validateUser(String username, String password){
         List<UserTable> userTables = (List<UserTable>) em.createNamedQuery("validate").setParameter("username",username)
                 .setParameter("password", password).getResultList();
+        //return userTables.get(0);
+        if(userTables.isEmpty())
+            System.out.println("EjbUserTable.validateUser() ger tom lista");
         return userTables.get(0);
     }
 
