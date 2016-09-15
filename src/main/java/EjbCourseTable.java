@@ -1,5 +1,4 @@
 import javax.ejb.Stateless;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
@@ -14,11 +13,11 @@ public class EjbCourseTable implements Serializable{
     @PersistenceContext
     private EntityManager entityManager;
 
-    public CourseTable validateUser(String username, String password){
-        List<CourseTable> courseTables = (List<CourseTable>) entityManager.createNamedQuery("validate").setParameter("username",username)
-                .setParameter("password", password).getResultList();
-        return courseTables.get(0);
-    }
+//    public CourseTable validateUser(String username, String password){
+//        List<CourseTable> courseTables = (List<CourseTable>) entityManager.createNamedQuery("validate").setParameter("username",username)
+//                .setParameter("password", password).getResultList();
+//        return courseTables.get(0);
+//    }
 
     public void dataEntryRemove( Long id) {
         CourseTable table = entityManager.find(CourseTable.class, id);
@@ -28,22 +27,31 @@ public class EjbCourseTable implements Serializable{
     public List<CourseTable> getAllCourses(String located) {
         List<CourseTable> l;
         if (located.equals(""))
-            l = entityManager.createNamedQuery("selectAllCourses").getResultList();
+            l = entityManager.createNamedQuery("SelectWithJoin").getResultList();
         else
-            l = entityManager.createNamedQuery("selectOneCourse").setParameter("id",located).getResultList();
+            l = entityManager.createNamedQuery("selectAllCourses2").getResultList();
+        for(Object p:l){
+            System.err.println(p);
+        }
 
         return l;
     }
 
-    public void courseAdd(CourseClass p) {
+    public void courseAdd(CourseClass p, LanguageClass l, LevelClass level) {
         CourseTable courseTable = new CourseTable();
+
+        LanguageTable lan = entityManager.find(LanguageTable.class, l.getLanguageId());
+        LevelTable lev = entityManager.find(LevelTable.class, level.getLevelId());
+
+
         courseTable.setName(p.getName());
         courseTable.setCourseCode(p.getCourseCode());
         courseTable.setCourseId(p.getCourseId());
         courseTable.setDescription(p.getDescription());
         courseTable.setDuration(p.getDuration());
-        courseTable.setlanguageId(p.getLanguageId());
-        courseTable.setLevelId(p.getLevelId());
+
+        courseTable.setLanguageId(lan);
+        courseTable.setLevelId(lev);
         courseTable.setMaxStudents(p.getMaxStudents());
         entityManager.persist(courseTable);
     }

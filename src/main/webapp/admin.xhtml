@@ -10,6 +10,9 @@
         <h:outputLabel value="Hello, admin"/>
         <br/>
         <br/>
+        <a href="course.xhtml">Course</a>
+        <br/>
+        <br/>
         <div class="Add user">
             <h:outputLabel value="Add user: "/>
             <br/>
@@ -98,70 +101,8 @@
         </div>
         <br/>
         <br/>
-        <div class="AddCourse">
-            <h:outputText value="Courses"/>
-            <br/>
-            <h:outputText value="Add course"/>
-            <br/>
-            <h:outputLabel value="Course name: "/>
-            <h:inputText label="cName" value="#{adminBean.courseName}"/>
-            <br/>
-            <h:outputLabel value="Course code: "/>
-            <h:inputText label="cCode" value="#{adminBean.courseCode}"/>
-            <br/>
-            <h:outputLabel value="Description: "/>
-            <h:inputText name="description: " value="#{adminBean.courseDescription}"/>
-            <br/>
-            <h:outputLabel value="Language: "/>
-
-            <h:selectOneMenu value="#{adminBean.languageId}">
-                <f:selectItems value="#{adminBean.courseLanguages}" var="language"
-                           itemLabel="#{language.language}" itemValue="#{language.languageId}" />
-            </h:selectOneMenu>
-
-            <br/>
 
 
-
-
-            <br/>
-            <br/>
-            <h:commandButton value="Add" action="#{adminBean.addCourse}"/>
-        </div>
-
-
-        <div class="ViewCourse">
-
-            <h:dataTable value="#{adminBean.courseList}" var="c" >
-                <h:column>
-                    <f:facet name="header">Course name</f:facet>
-                    #{c.name}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Course code</f:facet>
-                    #{c.courseCode}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Description</f:facet>
-                    #{c.description}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Level</f:facet>
-                    #{c.levelId}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Max Students</f:facet>
-                    #{c.maxStudents}
-                </h:column>
-
-                <h:column>
-                    <h:commandButton value="Delete" action="#{adminBean.remove(p.userId)}"/>
-                </h:column>
-                <h:column>
-                    <h:commandButton value="Edit" action="#{adminBean.editCourse(p.userId)}"/>
-                </h:column>
-            </h:dataTable>
-        </div>
     </h:form>
 </f:view>
 </html>

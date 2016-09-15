@@ -16,4 +16,11 @@ public class EjbLanguageTable implements Serializable{
     public List<LanguageTable> getAllLanguages() {
         return entityManager.createNamedQuery("selectAllLanguages").getResultList();
     }
+
+    public void addLanguage(LanguageClass language){
+        LanguageTable lanTab = new LanguageTable();
+        lanTab.setLanguage(language.getLanguage());
+        entityManager.persist(lanTab);
+
+    }
 }

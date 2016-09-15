@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <h:outputLabel value="Course management"/>
+        <br/>
+        <br/>
+        <div class="VievLanguages">
+            <h:outputLabel value="Languages" />
+            <br/>
+            <h:dataTable value="#{courseBean.languagesList}" var="l">
+                <h:column>
+                    <f:facet name="Id">LanguageId</f:facet>
+                    #{l.languageId}
+                </h:column>
+                <h:column>
+                    <f:facet name="Language">Language</f:facet>
+                    #{l.language}
+                </h:column>
+            </h:dataTable>
+        </div>
+        <br/>
+        <br/>
+
+
+        <div class="Add language">
+            <h:outputLabel value="Add language: "/>
+            <br/>
+            <h:outputLabel value="language: "/>
+            <h:inputText label="Language" value="#{courseBean.languageName}"/>
+            <br/>
+
+            <h:commandButton value="Add" action="#{courseBean.addLanguage}"/>
+        </div>
+        <br/>
+        <br/>
+        <div class="lang list">
+            <h:outputLabel value="Language list: "/>
+
+            <h:selectOneMenu value="#{courseBean.languageId}">
+                <f:selectItems value="#{courseBean.languagesList}" var="lang"
+                               itemLabel="#{lang.language}" itemValue="#{lang.languageId}" />
+            </h:selectOneMenu>
+        </div>
+
+        <div class="ViewCourse">
+
+        <h:dataTable value="#{courseBean.courseList}" var="c" >
+        <h:column>
+        <f:facet name="header">Course Id</f:facet>
+        #{c.courseId}
+        </h:column>
+        <h:column>
+        <f:facet name="header">Course code</f:facet>
+        #{c.courseCode}
+        </h:column>
+        <h:column>
+        <f:facet name="header">Name</f:facet>
+        #{c.name}
+        </h:column>
+            <h:column>
+                <f:facet name="header">Max Students</f:facet>
+                #{c.maxStudents}
+            </h:column>
+
+            <h:column>
+            <f:facet name="header">Level</f:facet>
+            #{c.levelId}
+            </h:column>
+            <h:column>
+            <f:facet name="header">language</f:facet>
+            #{c.languageId}
+            </h:column>
+
+
+        </h:dataTable>
+
+        </div>
+        <div class="AddCourse">
+        <br/>
+            <h:outputText styleClass="redText" value="Add course"/>
+        <br/>
+            <h:outputLabel value="Course code: "/>
+                <h:inputText label="cCode" value="#{courseBean.courseCode}"/>
+        <br/>
+            <h:outputLabel value="Course name: "/>
+                <h:inputText label="cName" value="#{courseBean.courseName}"/>
+        <br/>
+            <h:outputLabel value="Description: "/>
+                <h:inputText name="description: " value="#{courseBean.courseDescription}"/>
+        <br/>
+            <h:outputLabel value="Duration: "/>
+                <h:inputText name="Duration: " value="#{courseBean.courseDuration}"/>
+        <br/>
+            <h:outputLabel value="Max number of students: "/>
+                <h:inputText name="MaxStudents: " value="#{courseBean.courseMaxStudents}"/>
+        <br/>
+            <h:outputLabel value="Language: "/>
+                <h:selectOneMenu value="#{courseBean.languageId}">
+                    <f:selectItems value="#{courseBean.languagesList}" var="lang" itemLabel="#{lang.language}" itemValue="#{lang.languageId}" />
+            </h:selectOneMenu>
+        <br/>
+            <h:outputLabel value="Course level: "/>
+                <h:selectOneMenu value="#{courseBean.levelId}">
+                    <f:selectItems value="#{courseBean.levelsList}" var="lev" itemLabel="#{lev.level}" itemValue="#{lev.levelId}" />
+            </h:selectOneMenu>
+        <br/>
+
+        <br/>
+        <h:commandButton value="Add" action="#{courseBean.addCourse}"/>
+        </div>
+
+        <br/>
+
+    </h:form>
+    <br/>
+    <a href="admin.xhtml">Back to admin page</a>
+    <br/>
+</f:view>
+</html>

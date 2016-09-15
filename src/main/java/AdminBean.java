@@ -1,4 +1,3 @@
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -17,24 +16,26 @@ import java.util.Map;
 public class AdminBean implements Serializable {
     //private UserClass user = new UserClass("admin", "admin", "admin");
     private UserClass user = new UserClass();
-    private CourseClass course = new CourseClass();
-    private LanguageClass language = new LanguageClass();
+//    private CourseClass course = new CourseClass();
+//    private LanguageClass language = new LanguageClass();
+    private LevelClass level = new LevelClass();
     //CourseClass course1 = new CourseClass();
     //private Initialization initialization = new Initialization();
     //private EjbUserTable ejbUserTable = new EjbUserTable();
     @Inject
     private EjbUserTable service;
-    @Inject
-    private EjbCourseTable courseService;
-    @Inject
-    private EjbLanguageTable languageService;
 
-    @PostConstruct
-    public void init() {
-        service.userAdd(user);
-        user.setUsername("admin");
-        user.setPassword("admin");
-        user.setRole("admin");
+//    @Inject
+//    private EjbCourseTable courseService;
+//    @Inject
+//    private EjbLanguageTable languageService;
+
+//    @PostConstruct
+//    public void init() {
+//        service.userAdd(user);
+//        user.setUsername("admin");
+//        user.setPassword("admin");
+//        user.setRole("admin");
     /*}
     @PostConstruct
     public void init() {*/
@@ -69,7 +70,7 @@ public class AdminBean implements Serializable {
 
         //store course
         //entitymanager.persist(course1);
-    }
+    //}
 
     public String remove(Long idRemove){
         service.dataEntryRemove(idRemove);
@@ -92,12 +93,12 @@ public class AdminBean implements Serializable {
         return "admin";
     }
 
-    public String editCourse(long id){
-        System.out.println("Editing course");
-        setUsername("");
-        setPassword("");
-        return "admin";
-    }
+//    public String editCourse(long id){
+//        System.out.println("Editing course");
+//        setUsername("");
+//        setPassword("");
+//        return "admin";
+//    }
 
     public List<UserTable> getUserList(){
         //List<UserTable> ps = service.getAll("");
@@ -114,27 +115,29 @@ public class AdminBean implements Serializable {
         return "admin";
     }
 
-    public String addCourse(){
-        //userClass = new UserClass(getUsername(),getPassword(), getRole());
-        courseService.courseAdd(course);
-        /*setUsername("");
-        setRole("");
-        setPassword("");*/
-        return "admin";
-    }
+//    public String addCourse(){
+//        //userClass = new UserClass(getUsername(),getPassword(), getRole());
+//        courseService.courseAdd(course);
+//        /*setUsername("");
+//        setRole("");
+//        setPassword("");*/
+//        return "admin";
+//    }
+//
+//
+//    public List<CourseTable> getCourseList(){
+//        return courseService.getAllCourses();
+//
+//    }
 
-    public List<LanguageTable> getCourseLanguages(){
-        //List<LanguageTable> languagesList666 = languageService.getAllLanguages();
-        //return languagesList666;
-        return languageService.getAllLanguages();
-    }
 
-    public List<CourseTable> getCourseList(){
-        List<CourseTable> cs = courseService.getAllCourses("");
-        return cs;
-    }
+
 
     //Setters ang getters for the user object
+//    public UserClass getUser(){
+//        return user;
+//    }
+
     public String getUsername() {
         return user.getUsername();
     }
@@ -199,55 +202,50 @@ public class AdminBean implements Serializable {
     public void setAdress(String adress) {
         user.setAdress(adress);
     }
-    //////////////////// COURSE ////////////////////////////////////////////////////////////
-    public  String getCourseName(){
-        return course.getName();
-    }
-    public void setCourseName(String courseName){
-        course.setName(courseName);
-    }
-    public  String getCourseCode(){
-        return course.getName();
-    }
-    public void setCourseCode(String courseCode){
-        course.setName(courseCode);
-    }
-    public Long getCourseId(){
-        return course.getCourseId();
-    }
-    public void setCourseId(String courseId){
-        course.setName(courseId);
-    }
-    public  String getCourseDescription(){
-        return course.getDescription();
-    }
-    public void setCourseDescription(String courseDescription){
-        course.setDescription(courseDescription);
-    }
-    public  String getCourseDuration(){
-        return course.getDuration();
-    }
-    public void setCourseDuration(String courseDuration){
-        course.setDuration(courseDuration);
-    }
-    public int getCourseMaxStudents(){
-        return course.getMaxStudents();
-    }
-    public void setCourseMaxStudents(int courseMaxStudents){
-        course.setMaxStudents(courseMaxStudents);
 
-    }
-    public int getLanguageId(){
-        return (int)language.getLanguageId();
-    }
-    public void setLanguageId(LanguageTable languageId){
-        course.setLanguageId(languageId);
-    }
-//    public int getCourseLevelId(){
-//        return course.getLanguageId();
+
+//    //////////////////// COURSE ////////////////////////////////////////////////////////////
+//    public  String getCourseName(){
+//        return course.getName();
 //    }
-//    public void setCourseLevelId(int courseLevelId){
-//        course.setLevelId(courseLevelId);
+//    public void setCourseName(String courseName){
+//        course.setName(courseName);
+//    }
+//    public  String getCourseCode(){
+//        return course.getName();
+//    }
+//    public void setCourseCode(String courseCode){
+//        course.setName(courseCode);
+//    }
+//    public long getCourseId(){
+//        return course.getCourseId();
+//    }
+//    public void setCourseId(String courseId){
+//        course.setName(courseId);
+//    }
+//    public  String getCourseDescription(){
+//        return course.getDescription();
+//    }
+//    public void setCourseDescription(String courseDescription){
+//        course.setDescription(courseDescription);
+//    }
+//    public  String getCourseDuration(){
+//        return course.getDuration();
+//    }
+//    public void setCourseDuration(String courseDuration){
+//        course.setDuration(courseDuration);
+//    }
+//    public int getCourseMaxStudents(){
+//        return course.getMaxStudents();
+//    }
+//    public void setCourseMaxStudents(int courseMaxStudents){
+//        course.setMaxStudents(courseMaxStudents);
+//    }
+
+
+
+//    public long getCourseLevelId(){ return level.getLevelId();}
+//    public void setCourseLevelId(LevelTable courseLevelId){ course.setLevelId(courseLevelId);
 //    }
 
 
