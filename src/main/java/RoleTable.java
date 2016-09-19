@@ -10,8 +10,9 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="RoleTable")
 @NamedQueries({
-        @NamedQuery(name="selectAllRoles",query="SELECT t FROM RoleTable t"),
-        @NamedQuery(name="selectOneRole",query="SELECT t FROM RoleTable t WHERE t.roleId = :id")
+        @NamedQuery(name="selectAllRoles",query="SELECT t FROM RoleTable t")
+        //@NamedQuery(name="findUserRole",query="SELECT r, m FROM RoleTable r, Role_Member m WHERE r.roleId = m.roleId")
+        //@NamedQuery(name="findUserRole",query="select u from usertable u left join fetch u.roles")
 })
 public class RoleTable {
 

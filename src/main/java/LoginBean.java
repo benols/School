@@ -2,6 +2,8 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 
 /**
@@ -17,6 +19,9 @@ public class LoginBean implements Serializable{
     @Inject
     private EjbUserTable service;
 
+    @PersistenceContext
+    private EntityManager entityManager;
+
    // @PostConstruct
 //    public void init() {
 //        service.userAdd(user);
@@ -25,14 +30,32 @@ public class LoginBean implements Serializable{
 //        user.setRole("");
 //    }
 
-    public String validateLogin(){
+    public String validateLogin() {
         UserTable userTable = service.validateUser(getUsername(), getPassword());
-        if(userTable != null) {
-            user.setUserId(userTable.getUserId());
-            user.setRole(userTable.getRole());
-            return user.getRole();
-        }
-        else{
+        String rol="";
+        if (userTable != null) {
+            long uId = userTable.getUserId();
+            long rId;
+
+            user.setUserId(uId);
+            boolean valid = false;
+            for (RoleTable r : userTable.getRole()) {
+                if (r.getRole().equalsIgnoreCase("admin")) {
+                    rol = "admin";
+                    System.out.println("admin");
+
+                } else {
+                    rol = "student";
+                    System.out.println(rol);
+                }
+            }
+            System.out.println(rol);
+            return rol;
+
+//                if (r.getRole().equals("admin"))
+//                    valid=true;
+        }else {
+            System.out.println(rol);
             return "login";
         }
     }

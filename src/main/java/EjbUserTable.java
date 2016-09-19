@@ -15,6 +15,11 @@ public class EjbUserTable {
                 .setParameter("password", password).getResultList();
         return userTables.get(0);
     }
+//    public UserTable validateUserRole(long userId){
+//        List<UserTable> roles = (List<UserTable>) em.createNamedQuery("findUserRole").getResultList();
+//
+//        return roles.get(0).getRole();
+//    }
 
     public void dataEntryRemove( Long id) {
         UserTable table = em.find(UserTable.class, id);
@@ -38,7 +43,7 @@ public class EjbUserTable {
 
         userTable.setUsername(p.getUsername());
         userTable.setPassword(p.getPassword());
-        userTable.setRole(p.getRole());
+        //userTable.setRole(p.getRole());
         userTable.setAdress(p.getAdress());
         userTable.setSex(sex);
         userTable.setBirthDate(p.getBirthDate());
