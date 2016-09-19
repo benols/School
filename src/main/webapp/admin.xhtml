@@ -26,10 +26,9 @@
             <h:inputText label="Password: " value="#{adminBean.password}"/>
             <br/>
             <h:outputLabel value="Role: "/>
-            <h:selectOneMenu   value="#{adminBean.role}">
-                <f:selectItem    itemValue="student"     itemLabel="Student"  />
-                <f:selectItem    itemValue="teacher"    itemLabel="Teacher"   />
-                <f:selectItem    itemValue="admin"   itemLabel="Admin"   />
+            <h:selectOneMenu value="#{adminBean.roleId}">
+                <f:selectItems value="#{adminBean.roleList}" var="r"
+                               itemLabel="#{r.role}" itemValue="#{r.roleId}" />
             </h:selectOneMenu>
             <br/>
             <h:outputLabel value="Email: "/>

@@ -1,5 +1,6 @@
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class UserTable implements Serializable{
             joinColumns = @JoinColumn(name = "USERID", referencedColumnName = "USERID"),
             inverseJoinColumns = @JoinColumn(name = "ROLEID", referencedColumnName = "ROLEID")
             )
-    private List<RoleTable> role;
+    private List<RoleTable> role = new ArrayList<RoleTable>();
 
     public UserTable(String username, String password, RoleTable role) {
         this.username = username;

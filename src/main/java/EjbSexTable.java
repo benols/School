@@ -11,12 +11,15 @@ import java.util.List;
  */
 @Stateless
 public class EjbSexTable implements Serializable {
-
     @PersistenceContext
     private EntityManager entityManager;
 
     public List<SexTable> getAllSexess() {
         return entityManager.createNamedQuery("selectAllSexes").getResultList();
+    }
+
+    public List<SexTable> getOneSex(String id) {
+        return entityManager.createNamedQuery("selectOneSex").setParameter("id",id).getResultList();
     }
 
     public void addSex(SexClass sex){

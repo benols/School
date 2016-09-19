@@ -13,7 +13,10 @@ public class EjbUserTable {
     public UserTable validateUser(String username, String password){
         List<UserTable> userTables = (List<UserTable>) em.createNamedQuery("validate").setParameter("username",username)
                 .setParameter("password", password).getResultList();
-        return userTables.get(0);
+        if (userTables.get(0) != null) {
+            System.out.println("Login validation not null");
+            return userTables.get(0);
+        }else return null;
     }
 //    public UserTable validateUserRole(long userId){
 //        List<UserTable> roles = (List<UserTable>) em.createNamedQuery("findUserRole").getResultList();
@@ -36,14 +39,17 @@ public class EjbUserTable {
         return l;
     }
 
-    public void userAdd( UserClass p, SexClass s ) {
+    public void userAdd( UserClass p, SexClass s, RoleClass r ) {
         UserTable userTable = new UserTable();
 
         SexTable sex = em.find(SexTable.class, s.getSexId());
 
+        RoleTable role = em.find(RoleTable.class, r.getRoleId());
+
         userTable.setUsername(p.getUsername());
         userTable.setPassword(p.getPassword());
-        //userTable.setRole(p.getRole());
+        userTable.getRole().add(role);
+     //   userTable.setRole((List<RoleTable>) role);
         userTable.setAdress(p.getAdress());
         userTable.setSex(sex);
         userTable.setBirthDate(p.getBirthDate());

@@ -52,6 +52,10 @@ public class AdminBean implements Serializable {
         System.out.println("Editing user");
         setUsername("");
         setPassword("");
+        setName("");
+        setEmail("");
+        setAdress("");
+        setContactDetails("");
         return "admin";
     }
 
@@ -63,7 +67,7 @@ public class AdminBean implements Serializable {
 
     public String addUser(){
         //userClass = new UserClass(getUsername(),getPassword(), getRole());
-        userService.userAdd(user, sex);
+        userService.userAdd(user, sex, role);
         setUsername("");
         setRole("");
         setPassword("");
@@ -73,6 +77,10 @@ public class AdminBean implements Serializable {
     public List<SexTable> getSexList(){
         return sexService.getAllSexess();
     }
+
+//    public List<SexTable> getSexList2(){
+//        return sexService.getOneSex("1");
+//    }
 
     public String addSex(){
         sexService.addSex(sex);

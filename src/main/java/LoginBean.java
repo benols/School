@@ -44,7 +44,11 @@ public class LoginBean implements Serializable{
                     rol = "admin";
                     System.out.println("admin");
 
-                } else {
+                } else if (r.getRole().equalsIgnoreCase("teacher")) {
+                    rol = "teacher";
+                    System.out.println("teacher");
+
+                }else{
                     rol = "student";
                     System.out.println(rol);
                 }
