@@ -13,7 +13,8 @@ public class EjbUserTable {
     public UserTable validateUser(String username, String password){
         List<UserTable> userTables = (List<UserTable>) em.createNamedQuery("validate").setParameter("username",username)
                 .setParameter("password", password).getResultList();
-        if (userTables.get(0) != null) {
+
+        if (!userTables.isEmpty()) {
             System.out.println("Login validation not null");
             return userTables.get(0);
         }else return null;
@@ -55,6 +56,7 @@ public class EjbUserTable {
         userTable.setBirthDate(p.getBirthDate());
         userTable.setContactDetails(p.getContactDetails());
         userTable.setName(p.getName());
+        userTable.setEmail(p.getEmail());
         em.persist(userTable);
     }
 

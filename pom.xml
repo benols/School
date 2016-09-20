@@ -13,6 +13,12 @@
       <artifactId>javaee-api</artifactId>
       <version>7.0</version>
     </dependency>
+    <dependency>
+      <groupId>net.bootsfaces</groupId>
+      <artifactId>bootsfaces</artifactId>
+      <version>0.9.1</version>
+      <scope>compile</scope>
+    </dependency>
       <!--<dependency>
       <groupId>org.eclipse.persistence</groupId>
       <artifactId>org.eclipse.persistence.jpa</artifactId>

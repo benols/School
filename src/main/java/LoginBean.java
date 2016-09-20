@@ -1,5 +1,6 @@
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -10,7 +11,7 @@ import java.io.Serializable;
  * @author Benjamin Olsson
  */
 @Named
-@ManagedBean
+//@ManagedBean
 @SessionScoped
 public class LoginBean implements Serializable{
     private UserClass user = new UserClass("admin", "admin", "admin");
@@ -54,16 +55,25 @@ public class LoginBean implements Serializable{
                 }
             }
             System.out.println(rol);
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Congratulations! You've successfully logged in.");
+            FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
             return rol;
 
 //                if (r.getRole().equals("admin"))
 //                    valid=true;
         }else {
             System.out.println(rol);
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Wrong username or password!");
+            FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
             return "login";
         }
     }
 
+    public String forgotPassword(){
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "This function will be added later, so far use lecithin ;)");
+        FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
+        return "login";
+    }
     //Setters ang getters for the user object
     public String getUsername() {
         return user.getUsername();
