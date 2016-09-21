@@ -40,6 +40,10 @@ public class EjbUserTable {
         return l;
     }
 
+//    public String getUserSex(SexClass s){
+//        SexTable sex = em.find(SexTable.class, s.getSexId());
+//    }
+
     public void userAdd( UserClass p, SexClass s, RoleClass r ) {
         UserTable userTable = new UserTable();
 

@@ -7,9 +7,10 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>School - Admin</title>
+    <meta name="author" content="Pawel"></meta>
 </h:head>
 <h:body style="padding: 60px;">
-    <b:navBar brand="Admin" brandHref="#" fixed="top" inverse="true">
+    <b:navBar brand="Admin" brandHref="#" fixed="top" inverse="true" update="@body">
         <b:navbarLinks>
             <b:navLink value="Add Role" href="role.xhtml"></b:navLink>
             <b:navLink value="Add Sex" href="sex.xhtml"></b:navLink>
@@ -146,6 +147,19 @@
                         <b:message for="sex" />
                     </b:column>
                 </b:row>
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Date of Birth:" for="dob"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:datepicker id="dob" mode="toggle-icon" showWeek="true" firstDay="1"
+                                      value="#{adminBean.birthDate}"/>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="dob" />
+                    </b:column>
+                </b:row>
+                <br/>
                 <b:commandButton value="Add" action="#{adminBean.addUser}" update="@form" look="primary"
                                  style="width:20%" />
             </b:jumbotron>
@@ -182,18 +196,21 @@
 
                     <b:column>
                         <f:facet name="header">Sex</f:facet>
-                        #{p.sex}
+                        #{p.sex.sex}
                     </b:column>
                     <b:column>
                         <f:facet name="header">Role</f:facet>
                         #{p.role}
                     </b:column>
+                    <h:column>
+                        <f:facet name="header">Edit</f:facet>
+                        <h:commandButton value="Edit" action="#{adminBean.editUser(p.userId)}"/>
+                    </h:column>
                 <h:column>
+                    <f:facet name="header">Delete</f:facet>
                     <h:commandButton value="Delete" action="#{adminBean.remove(p.userId)}"/>
                 </h:column>
-                <h:column>
-                    <h:commandButton value="Edit" action="#{adminBean.editUser(p.userId)}"/>
-                </h:column>
+
                 </b:dataTable>
             </b:jumbotron>
 

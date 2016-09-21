@@ -42,15 +42,15 @@ public class LoginBean implements Serializable{
             boolean valid = false;
             for (RoleTable r : userTable.getRole()) {
                 if (r.getRole().equalsIgnoreCase("admin")) {
-                    rol = "admin";
+                    rol = "admin?faces-redirect=true";
                     System.out.println("admin");
 
                 } else if (r.getRole().equalsIgnoreCase("teacher")) {
-                    rol = "teacher";
+                    rol = "teacher?faces-redirect=true";
                     System.out.println("teacher");
 
                 }else{
-                    rol = "student";
+                    rol = "student?faces-redirect=true";
                     System.out.println(rol);
                 }
             }
@@ -58,6 +58,7 @@ public class LoginBean implements Serializable{
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Congratulations! You've successfully logged in.");
             FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
             return rol;
+            //return "admin?faces-redirect=true";
 
 //                if (r.getRole().equals("admin"))
 //                    valid=true;

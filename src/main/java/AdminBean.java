@@ -188,6 +188,13 @@ public class AdminBean implements Serializable {
         return user.getSex();
     }
 
+//    public String getSexOfUser() {
+////        EntityManager entityManager;
+////        SexTable sex = entityManager.find(SexTable.class, s.getSexId());
+//        return userService.get;
+//    }
+//
+
     public void setSex(String sex) {
         user.setSex(sex);
     }
