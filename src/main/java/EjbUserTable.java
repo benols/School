@@ -13,8 +13,7 @@ public class EjbUserTable {
     public UserTable validateUser(String username, String password){
         List<UserTable> userTables = (List<UserTable>) em.createNamedQuery("validate").setParameter("username",username)
                 .setParameter("password", password).getResultList();
-
-        if (!userTables.isEmpty()) {
+        if (userTables.get(0) != null) {
             System.out.println("Login validation not null");
             return userTables.get(0);
         }else return null;
@@ -40,9 +39,12 @@ public class EjbUserTable {
         return l;
     }
 
-//    public String getUserSex(SexClass s){
-//        SexTable sex = em.find(SexTable.class, s.getSexId());
-//    }
+    public void registerStudent(UserClass student, SemesterClass semester){
+        UserTable userTable = new UserTable();
+        SemesterTable semesterTable = em.find(SemesterTable.class, semester.getSemesterId());
+        userTable.setUserId(student.getUserId());
+        userTable.getSemesterTables().add(semesterTable);
+    }
 
     public void userAdd( UserClass p, SexClass s, RoleClass r ) {
         UserTable userTable = new UserTable();
@@ -60,7 +62,6 @@ public class EjbUserTable {
         userTable.setBirthDate(p.getBirthDate());
         userTable.setContactDetails(p.getContactDetails());
         userTable.setName(p.getName());
-        userTable.setEmail(p.getEmail());
         em.persist(userTable);
     }
 

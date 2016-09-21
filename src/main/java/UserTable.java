@@ -51,6 +51,21 @@ public class UserTable implements Serializable{
             )
     private List<RoleTable> role = new ArrayList<RoleTable>();
 
+    /*public List<SemesterTable> getSemesterTables() {
+        return semesterTables;
+    }*/
+
+    public void setSemesterTables(List<SemesterTable> semesterTables) {
+        this.semesterTables = semesterTables;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "REGISTER",
+            joinColumns = @JoinColumn(name = "USERID", referencedColumnName = "USERID"),
+            inverseJoinColumns = @JoinColumn(name = "SEMESTERID", referencedColumnName = "SEMESTERID")
+    )
+    private List<SemesterTable> semesterTables = new ArrayList<SemesterTable>();
+
     public UserTable(String username, String password, RoleTable role) {
         this.username = username;
         this.password = password;
@@ -97,6 +112,10 @@ public class UserTable implements Serializable{
 
     public void setRole(List<RoleTable> role) {
         this.role = role;
+    }
+
+    public List<SemesterTable> getSemesterTables() {
+        return semesterTables;
     }
 
     public String getName() {
