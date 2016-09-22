@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/61f4f2d7-cd45-4c22-b093-673067eb640e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/61f4f2d7-cd45-4c22-b093-673067eb640e.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AdminBean.java" afterPath="$PROJECT_DIR$/src/main/java/AdminBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EjbRoleTable.java" afterPath="$PROJECT_DIR$/src/main/java/EjbRoleTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/EjbSexTable.java" afterPath="$PROJECT_DIR$/src/main/java/EjbSexTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/LoginBean.java" afterPath="$PROJECT_DIR$/src/main/java/LoginBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserTable.java" afterPath="$PROJECT_DIR$/src/main/java/UserTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/role.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/role.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/sex.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/sex.xhtml" />
-    </list>
+    <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1120,7 +1109,7 @@
       <workItem from="1474012284020" duration="12475000" />
       <workItem from="1474268851048" duration="42174000" />
       <workItem from="1474459941855" duration="948000" />
-      <workItem from="1474461449924" duration="11461000" />
+      <workItem from="1474461449924" duration="11521000" />
     </task>
     <task id="LOCAL-00001" summary="test update">
       <created>1473241498783</created>
@@ -1311,11 +1300,18 @@
       <option name="project" value="LOCAL" />
       <updated>1474453989633</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary=" some more UI fixes">
+      <created>1474541696333</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1474541696333</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176954000" />
+    <option name="totallyTimeSpent" value="177014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1393,7 +1389,8 @@
     <MESSAGE value="Bootsfaces added" />
     <MESSAGE value="Bootsfaces added and some UI changes" />
     <MESSAGE value=" some UI fix" />
-    <option name="LAST_COMMIT_MESSAGE" value=" some UI fix" />
+    <MESSAGE value=" some more UI fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value=" some more UI fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
