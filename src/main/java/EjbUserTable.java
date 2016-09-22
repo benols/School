@@ -38,6 +38,18 @@ public class EjbUserTable {
 
         return l;
     }
+    /*public List<UserTable> getAllTeachers(String located) {
+        List<UserTable> l;
+        RoleTable rt = new RoleTable();
+        rt.setRole("teacher");
+        if (located.equals(""))
+            l = em.createNamedQuery("findUserRole").getResultList();
+        else
+            l = em.createNamedQuery("findUserRole").setParameter(rt.getRole(), RoleTable.class).getResultList();
+
+        return l;
+    }*/
+
 
     public void registerStudent(UserClass student, SemesterClass semester){
         UserTable userTable = new UserTable();

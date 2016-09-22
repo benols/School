@@ -12,32 +12,85 @@ import java.util.List;
 @SessionScoped
 public class SemesterBean implements Serializable {
     private CourseClass courseClass = new CourseClass();
-    //private UserClass userClass = new UserClass();
+    private UserClass userClass = new UserClass();
     private SemesterClass semesterClass = new SemesterClass();
     //SemesterTable semesterTable = new SemesterTable();
+    private LanguageClass languageClass = new LanguageClass();
+
     @Inject
    private EjbRegisterBean ejbRegisterBean;
 
     @Inject
    private EjbSemesterTable ejbSemesterTable;
-    /////???????????????????????????????????
+    @Inject
+    private EjbUserTable ejbUserTable;
+    @Inject
+    private EjbCourseTable courseService;
+    @Inject EjbRoleTable ejbRoleTable;
+
+
+    public String addSemester(){
+        //Add semester TODO
+        ejbSemesterTable.addSemester(courseClass, userClass, semesterClass);
+
+        return "semester";
+    }
+
+    public List<UserTable> getTeacherList(){
+        return ejbUserTable.getAllUsers("");// Change to get all teachers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //return ejbUserTable.getAllTeachers("");
+        //return ejbRoleTable.getTeachers();
+    }
+
+    public List<CourseTable> getCourseList(){
+        return courseService.getAllCourses("");
+    }
+
     public String getDescription(){
         return semesterClass.getDescription();
+    }
+    public void setDescription(String description){
+        semesterClass.setDescription(description);
     }
     public Date getEndDate(){
         return semesterClass.getEndDate();
     }
-    public Date getStartData(){
+    public void setEndDate(Date date){
+        semesterClass.setEndDate(date);
+    }
+    public Date getStartDate(){
         return semesterClass.getStartDate();
     }
-    public long getCourseId(){
+    public void setStartDate(Date date){
+        semesterClass.setStartDate(date);
+    }
+    public long getSemesterId(){
         return semesterClass.getCourseId();
     }
-    public long getTeacherId(){
-        return semesterClass.getTeacherId();
+    public void setSemesterId(long semesterId){
+        semesterClass.setSemesterId(semesterId);
     }
 
-    ////END ???????????????????
+    public long getUserId(){
+        return userClass.getUserId();
+    }
+    public void setUserId(long teacherId){
+        userClass.setUserId(teacherId);
+    }
+    public String getUserName(){
+        return userClass.getName();
+    }
+    public void setUserName(String name){
+        userClass.setName(name);
+    }
+
+    public long getCourseId(){
+        return courseClass.getCourseId();
+    }
+    public void setCourseId(long courseId){
+        courseClass.setCourseId(courseId);
+    }
+
     public CourseClass getCourseClass() {
         return courseClass;
     }
@@ -45,40 +98,6 @@ public class SemesterBean implements Serializable {
     public void setCourseClass(CourseClass courseClass) {
         this.courseClass = courseClass;
     }
-
-   /* public UserClass getUserClass() {
-        return userClass;
-    }
-
-    public void setUserClass(UserClass userClass) {
-        this.userClass = userClass;
-    }
-*/
-   /* public SemesterTable getSemesterTable() {
-        return semesterTable;
-    }
-
-    public void setSemesterTable(SemesterTable semesterTable) {
-        this.semesterTable = semesterTable;
-    }*/
-
-    /*public EjbRegisterBean getEjbRegisterBean() {
-        return ejbRegisterBean;
-    }
-
-    public void setEjbRegisterBean(EjbRegisterBean ejbRegisterBean) {
-        this.ejbRegisterBean = ejbRegisterBean;
-    }
-
-    public EjbSemesterTable getEjbSemesterTable() {
-        return ejbSemesterTable;
-    }
-
-    public void setEjbSemesterTable(EjbSemesterTable ejbSemesterTable) {
-        this.ejbSemesterTable = ejbSemesterTable;
-    }
-*/
-
 
     public List<SemesterTable> getSemesterList(){
         return ejbSemesterTable.getAllSemesters("");

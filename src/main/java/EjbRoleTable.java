@@ -18,6 +18,11 @@ public class EjbRoleTable implements Serializable {
         return entityManager.createNamedQuery("selectAllRoles").getResultList();
     }
 
+    public List<UserTable> getTeachers() {
+        return entityManager.createNamedQuery("selectTeachers").getResultList();
+    }
+
+
     public void addRole(RoleClass role){
         RoleTable roleTab = new RoleTable();
         roleTab.setRole(role.getRole());

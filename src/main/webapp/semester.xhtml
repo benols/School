@@ -43,6 +43,36 @@
             </h:dataTable>
 
         </div>
+        <h:outputLabel value="Add semester"/>
+        <div class="AddSemester">
+            <br/>
+            <h:outputText styleClass="redText" value="Add semester"/>
+            <br/>
+            <h:outputLabel value="Semester code: "/>
+            <h:inputText label="sCode" value="#{semesterBean.semesterId}"/>
+            <br/>
+            <h:outputLabel value="Description: "/>
+            <h:inputText label="description" value="#{semesterBean.description}"/>
+            <br/>
+            <h:outputLabel value="Start date: "/>
+            <h:inputText name="Duration: " value="#{semesterBean.startDate}"/>
+            <br/>
+            <h:outputLabel value="End date: "/>
+            <h:inputText name="End date: " value="#{semesterBean.endDate}"/>
+            <br/>
+            <h:outputLabel value="Teacher: "/>
+            <h:selectOneMenu value="#{semesterBean.userId}">
+                <f:selectItems value="#{semesterBean.teacherList}" var="userTable" itemLabel="#{userTable.name}" itemValue="#{userTable.userId}" />
+            </h:selectOneMenu>
+            <br/>
+            <h:outputLabel value="Course: "/>
+            <h:selectOneMenu value="#{semesterBean.courseId}">
+                <f:selectItems value="#{semesterBean.courseList}" var="cour" itemLabel="#{cour.name}" itemValue="#{cour.courseId}" />
+            </h:selectOneMenu>
+            <br/>
+            <br/>
+            <h:commandButton value="Add" action="#{semesterBean.addSemester}"/>
+        </div>
     </h:form>
 
 </f:view>

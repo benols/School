@@ -40,7 +40,7 @@ public class EjbCourseTable implements Serializable{
 
         courseTable.setName(p.getName());
         courseTable.setCourseCode(p.getCourseCode());
-        courseTable.setCourseId(p.getCourseId());
+      //  courseTable.setCourseId(p.getCourseId());
         courseTable.setDescription(p.getDescription());
         courseTable.setDuration(p.getDuration());
 

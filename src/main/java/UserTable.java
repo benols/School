@@ -17,6 +17,10 @@ import java.util.List;
         //@NamedQuery(name="validate", query="SELECT t FROM UserTable t WHERE LOCATE(:username,t.username) = 1")//,
         //@NamedQuery(name="validate", query="SELECT DISTINCT u FROM UserTable u WHERE u.username = :username AND u.password = :password")
         @NamedQuery(name="validate", query="SELECT DISTINCT u FROM UserTable u WHERE u.username = :username AND u.password = :password"),
+        //@NamedQuery(name="selectAllTeachers", query="SELECT DISTINCT u FROM UserTable u JOIN ROLE_MEMEBER m ON u.userId = m.roleId JOIN ROLETABLE r ON r.roleid = m.roleid  WHERE r.role = 2"),
+       // @NamedQuery(name="selectAllTeachers", query="SELECT u  FROM UserTable u JOIN ROLE_MEMBER m ON u.userId = m.roleId  JOIN ROLETABLE r ON r.roleid = m.roleid"),
+        //@NamedQuery(name="selectAllTeachers", query="SELECT u  FROM UserTable u  JOIN RoleTable r ON r.roleId LIKE :role"),
+       // @NamedQuery(name="selectAllTeachers", query="SELECT u  FROM UserTable u  JOIN RoleTable r ON r.roleId = u.role"),
 
         //@NamedQuery(name="selectAllIDs",query="SELECT id FROM tabell id"),
         // @NamedQuery(name="selectAllIDs",query="SELECT id FROM Tabell"),
@@ -24,7 +28,8 @@ import java.util.List;
         //@NamedQuery(name="selectAll",query="SELECT t FROM Question t"),
         //@NamedQuery(name="selectQuery", query="SELECT t FROM Question t WHERE LOCATE(:fult,t.id) = 1"),
         @NamedQuery(name="selectOne",query="SELECT t FROM UserTable t WHERE t.userId = :id"),
-        @NamedQuery(name="findUserRole",query="select u from UserTable u left join fetch u.role")
+        @NamedQuery(name="findUserRole",query="select u from UserTable u left join fetch u.role")//,
+        //@NamedQuery(name="selectAllTeachers",query="select u from UserTable u left join fetch u.role where u.role = :roll")
 })
 public class UserTable implements Serializable{
     @Id
