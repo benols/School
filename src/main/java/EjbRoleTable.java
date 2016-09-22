@@ -23,4 +23,8 @@ public class EjbRoleTable implements Serializable {
         roleTab.setRole(role.getRole());
         entityManager.persist(roleTab);
     }
+    public void dataEntryRemove(long id) {
+        RoleTable table = entityManager.find(RoleTable.class, id);
+        entityManager.remove(table);
+    }
 }

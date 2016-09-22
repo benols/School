@@ -1,4 +1,5 @@
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -68,9 +69,14 @@ public class AdminBean implements Serializable {
     public String addUser(){
         //userClass = new UserClass(getUsername(),getPassword(), getRole());
         userService.userAdd(user, sex, role);
+
+        setName("");
         setUsername("");
-        setRole("");
         setPassword("");
+        setEmail("");
+        setAdress("");
+        setContactDetails("");
+        setRole("");
         return "admin";
     }
 //////////////////////SEX/////////////////////////////////////////
@@ -86,7 +92,14 @@ public class AdminBean implements Serializable {
         sexService.addSex(sex);
         return "sex";
     }
-
+    public void editSex(long id){
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Sorry implementation later!");
+        FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
+    }
+    public String removeSex(long id){
+        sexService.dataEntryRemove(id);
+        return "sex";
+    }
     public long getSexId() {
         return sex.getSexId();
     }
@@ -111,6 +124,16 @@ public class AdminBean implements Serializable {
         roleService.addRole(role);
         return "role";
     }
+
+    public void editRole(long id){
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Sorry implementation later!");
+        FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
+    }
+    public String removeRole(long id){
+        roleService.dataEntryRemove(id);
+        return "role";
+    }
+
 
     public long getRoleId() {
         return role.getRoleId();

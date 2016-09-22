@@ -198,24 +198,27 @@
                         <f:facet name="header">Sex</f:facet>
                         #{p.sex.sex}
                     </b:column>
+
                     <b:column>
                         <f:facet name="header">Role</f:facet>
-                        #{p.role}
+                        <h:dataTable value="#{p.role}" var="roles" >
+                        <h:column>
+                            <h:outputText  value="#{roles.role}"/>
+                        </h:column>
+                        </h:dataTable>
                     </b:column>
                     <h:column>
                         <f:facet name="header">Edit</f:facet>
-                        <h:commandButton value="Edit" action="#{adminBean.editUser(p.userId)}"/>
+                        <b:commandButton value="Edit" action="#{adminBean.editUser(p.userId)}" look="primary" style="width:100%"/>
                     </h:column>
                 <h:column>
                     <f:facet name="header">Delete</f:facet>
-                    <h:commandButton value="Delete" action="#{adminBean.remove(p.userId)}"/>
+                    <b:commandButton value="Delete" action="#{adminBean.remove(p.userId)}" look="warning" style="width:100%"/>
                 </h:column>
-
                 </b:dataTable>
             </b:jumbotron>
 
         </b:container>
-
 
 
     </h:form>

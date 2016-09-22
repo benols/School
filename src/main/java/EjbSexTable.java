@@ -27,4 +27,8 @@ public class EjbSexTable implements Serializable {
         sexTab.setSex(sex.getSex());
         entityManager.persist(sexTab);
     }
+    public void dataEntryRemove(long id) {
+        SexTable table = entityManager.find(SexTable.class, id);
+        entityManager.remove(table);
+    }
 }

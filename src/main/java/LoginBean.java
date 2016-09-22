@@ -14,7 +14,7 @@ import java.io.Serializable;
 //@ManagedBean
 @SessionScoped
 public class LoginBean implements Serializable{
-    private UserClass user = new UserClass("admin", "admin", "admin");
+    private UserClass logedUser = new UserClass("admin", "admin", "admin");
     private UserClass userAdd = new UserClass();
     private EjbUserTable ejbUserTable = new EjbUserTable();
     @Inject
@@ -38,7 +38,7 @@ public class LoginBean implements Serializable{
             long uId = userTable.getUserId();
             long rId;
 
-            user.setUserId(uId);
+            logedUser.setUserId(uId);
             boolean valid = false;
             for (RoleTable r : userTable.getRole()) {
                 if (r.getRole().equalsIgnoreCase("admin")) {
@@ -77,27 +77,27 @@ public class LoginBean implements Serializable{
     }
     //Setters ang getters for the user object
     public String getUsername() {
-        return user.getUsername();
+        return logedUser.getUsername();
     }
 
     public void setUsername(String username) {
-        user.setUsername(username);
+        logedUser.setUsername(username);
     }
 
     public String getPassword() {
-        return user.getPassword();
+        return logedUser.getPassword();
     }
 
     public void setPassword(String password) {
-        user.setPassword(password);
+        logedUser.setPassword(password);
     }
 
     public String getRole() {
-        return user.getRole();
+        return logedUser.getRole();
     }
 
     public void setRole(String role) {
-        user.setRole(role);
+        logedUser.setRole(role);
     }
 
 

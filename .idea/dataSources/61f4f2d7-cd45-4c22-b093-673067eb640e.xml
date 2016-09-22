@@ -51,20 +51,20 @@
     <column id="29" parent="13" name="LEVELID">
       <data-type>BIGINT(19)|-5</data-type>
     </column>
-    <key id="30" parent="13" name="SQL160919130209480">
+    <key id="30" parent="13" name="SQL160920143446690">
       <name-surrogate>1</name-surrogate>
       <columns>COURSEID</columns>
       <primary>1</primary>
     </key>
     <foreign-key id="31" parent="13" name="CRSETABLELNGUAGEID">
       <columns>LANGUAGEID</columns>
-      <ref-key>~.LANGUAGETABLE.SQL160919130210370</ref-key>
+      <ref-key>~.LANGUAGETABLE.SQL160920143447430</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>
     <foreign-key id="32" parent="13" name="COURSETABLELEVELID">
       <columns>LEVELID</columns>
-      <ref-key>~.LEVELTABLE.SQL160919130210020</ref-key>
+      <ref-key>~.LEVELTABLE.SQL160920143447140</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>
@@ -76,7 +76,7 @@
       <mandatory>1</mandatory>
       <data-type>VARCHAR(30)|12</data-type>
     </column>
-    <key id="35" parent="14" name="SQL160919130210370">
+    <key id="35" parent="14" name="SQL160920143447430">
       <name-surrogate>1</name-surrogate>
       <columns>LANGUAGEID</columns>
       <primary>1</primary>
@@ -89,7 +89,7 @@
       <mandatory>1</mandatory>
       <data-type>VARCHAR(50)|12</data-type>
     </column>
-    <key id="38" parent="15" name="SQL160919130210020">
+    <key id="38" parent="15" name="SQL160920143447140">
       <name-surrogate>1</name-surrogate>
       <columns>LEVELID</columns>
       <primary>1</primary>
@@ -102,7 +102,7 @@
       <mandatory>1</mandatory>
       <data-type>BIGINT(19)|-5</data-type>
     </column>
-    <key id="41" parent="16" name="SQL160919130210500">
+    <key id="41" parent="16" name="SQL160920143447530">
       <name-surrogate>1</name-surrogate>
       <columns>USERID
 ROLEID</columns>
@@ -110,13 +110,13 @@ ROLEID</columns>
     </key>
     <foreign-key id="42" parent="16" name="ROLE_MEMBER_USERID">
       <columns>USERID</columns>
-      <ref-key>~.USERTABLE.SQL160919130209760</ref-key>
+      <ref-key>~.USERTABLE.SQL160920143446890</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>
     <foreign-key id="43" parent="16" name="ROLE_MEMBER_ROLEID">
       <columns>ROLEID</columns>
-      <ref-key>~.ROLETABLE.SQL160919130210200</ref-key>
+      <ref-key>~.ROLETABLE.SQL160920143447280</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>
@@ -128,7 +128,7 @@ ROLEID</columns>
       <mandatory>1</mandatory>
       <data-type>VARCHAR(20)|12</data-type>
     </column>
-    <key id="46" parent="17" name="SQL160919130210200">
+    <key id="46" parent="17" name="SQL160920143447280">
       <name-surrogate>1</name-surrogate>
       <columns>ROLEID</columns>
       <primary>1</primary>
@@ -152,20 +152,20 @@ ROLEID</columns>
     <column id="52" parent="18" name="TEACHER_USERID">
       <data-type>BIGINT(19)|-5</data-type>
     </column>
-    <key id="53" parent="18" name="SQL160919130209870">
+    <key id="53" parent="18" name="SQL160920143446990">
       <name-surrogate>1</name-surrogate>
       <columns>SEMESTERID</columns>
       <primary>1</primary>
     </key>
     <foreign-key id="54" parent="18" name="SMSTRTBLECRSCRSEID">
       <columns>COURSE_COURSEID</columns>
-      <ref-key>~.COURSETABLE.SQL160919130209480</ref-key>
+      <ref-key>~.COURSETABLE.SQL160920143446690</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>
     <foreign-key id="55" parent="18" name="SMSTRTBLETCHRSERID">
       <columns>TEACHER_USERID</columns>
-      <ref-key>~.USERTABLE.SQL160919130209760</ref-key>
+      <ref-key>~.USERTABLE.SQL160920143446890</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>
@@ -189,7 +189,7 @@ ROLEID</columns>
       <mandatory>1</mandatory>
       <data-type>VARCHAR(15)|12</data-type>
     </column>
-    <key id="61" parent="20" name="SQL160919130209620">
+    <key id="61" parent="20" name="SQL160920143446780">
       <name-surrogate>1</name-surrogate>
       <columns>SEXID</columns>
       <primary>1</primary>
@@ -222,14 +222,14 @@ ROLEID</columns>
     <column id="70" parent="21" name="SEXID">
       <data-type>BIGINT(19)|-5</data-type>
     </column>
-    <key id="71" parent="21" name="SQL160919130209760">
+    <key id="71" parent="21" name="SQL160920143446890">
       <name-surrogate>1</name-surrogate>
       <columns>USERID</columns>
       <primary>1</primary>
     </key>
     <foreign-key id="72" parent="21" name="FK_USERTABLE_SEXID">
       <columns>SEXID</columns>
-      <ref-key>~.SEXTABLE.SQL160919130209620</ref-key>
+      <ref-key>~.SEXTABLE.SQL160920143446780</ref-key>
       <cascade-update-rule>no_action</cascade-update-rule>
       <cascade-delete-rule>no_action</cascade-delete-rule>
     </foreign-key>

@@ -1,65 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+<h:head>
+    <title>School - Sex</title>
+
+</h:head>
+<h:body style="padding: 60px;">
+    <b:navBar brand="Add Sex" brandHref="#" fixed="top" inverse="true" update="@body">
+        <b:navbarLinks>
+            <b:navLink value="Back to admin page" href="admin.xhtml"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
     <h:form>
-        <h:outputLabel value="Sex"/>
+        <b:container>
+            <b:jumbotron>
+                <br/>
+                <h2>Add new sex</h2>
+                <br/>
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Sex:" for="sex" />
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText placeholder="Sex" id="sex" value="#{adminBean.sexName}"
+                                     ajax="true" autocomplete="false" update="@(.message)">
+                        </b:inputText>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="sex" />
+                    </b:column>
+                </b:row>
+                <br/>
+                <b:commandButton value="Add" action="#{adminBean.addSex}" update="@form" look="primary"
+                                 style="width:20%" />
+            </b:jumbotron>
+        </b:container>
         <br/>
-        <br/>
-        <div class="ViewSex">
-            <h:outputLabel value="Sex" />
-            <br/>
-            <h:dataTable value="#{adminBean.sexList}" var="s">
-                <h:column>
-                    <f:facet name="Id">SexId</f:facet>
-                    #{s.sexId}
-                </h:column>
-                <h:column>
-                    <f:facet name="Sex">Sex</f:facet>
-                    #{s.sex}
-                </h:column>
-            </h:dataTable>
-        </div>
-        <br/>
-        <br/>
+        <b:container>
+            <b:jumbotron>
+                <h2>List of sexes</h2>
+                <b:dataTable value="#{adminBean.sexList}" var="s" >
+                    <b:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{s.sexId}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Sex</f:facet>
+                        #{s.sex}
+                    </b:column>
+                    <h:column>
+                        <f:facet name="header">Edit</f:facet>
+                        <b:commandButton value="Edit" action="#{adminBean.editSex(s.sexId)}" look="primary" style="width:40%"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <b:commandButton value="Delete" action="#{adminBean.removeSex(s.sexId)}" look="warning" style="width:40%"/>
+                    </h:column>
 
-        <br/>
-        <br/>
+                </b:dataTable>
+            </b:jumbotron>
 
-        <div class="Add Sex">
-            <h:outputLabel value="Add Sex: "/>
-            <br/>
-            <h:outputLabel value="sex: "/>
-            <h:inputText label="Sex" value="#{adminBean.sexName}"/>
-            <br/>
-            <h:commandButton value="Add" action="#{adminBean.addSex}"/>
-        </div>
-        <br/>
-        <br/>
-        <div class="lang list">
-            <h:outputLabel value="Sex list: "/>
-            <h:selectOneMenu value="#{adminBean.sexId}">
-                <f:selectItems value="#{adminBean.sexList}" var="sex"
-                               itemLabel="#{sex.sex}" itemValue="#{sex.sexId}" />
-            </h:selectOneMenu>
-        </div>
+        </b:container>
+        <!--<div class="lang list">-->
+            <!--<h:outputLabel value="Sex list: "/>-->
+            <!--<h:selectOneMenu value="#{adminBean.sexId}">-->
+                <!--<f:selectItems value="#{adminBean.sexList}" var="sex"-->
+                               <!--itemLabel="#{sex.sex}" itemValue="#{sex.sexId}" />-->
+            <!--</h:selectOneMenu>-->
+        <!--</div>-->
 
-
-    <br/>
-    <a href="admin.xhtml">Back to admin page</a>
-    <br/>
     </h:form>
-    <b:container>
-        <b:row>
-            <b:column>
-                <h1>Hello, world!</h1>
-            </b:column>
-        </b:row>
-    </b:container>
-</f:view>
+</h:body>
 </html>

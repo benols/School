@@ -8,7 +8,7 @@ import java.util.List;
  * @author Benjamin Olsson
  */
 @Entity
-@Table(name="UserTable")
+@Table(name="UserTable", uniqueConstraints=@UniqueConstraint(columnNames="username"))
 @NamedQueries({
         @NamedQuery(name="selectAllIDs",query="SELECT t.userId FROM UserTable t"),
         @NamedQuery(name="selectAll",query="SELECT t FROM UserTable t"),
@@ -26,6 +26,7 @@ import java.util.List;
         @NamedQuery(name="selectOne",query="SELECT t FROM UserTable t WHERE t.userId = :id"),
         @NamedQuery(name="findUserRole",query="select u from UserTable u left join fetch u.role")
 })
+
 public class UserTable implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +34,9 @@ public class UserTable implements Serializable{
     private long userId;
 
     private String name;
+    @Column(name = "username")
     private String username;
+
     private String password;
     private String email;
     private Date birthDate;
