@@ -2,37 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/error.xhtml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/AdminBean.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/beans/AdminBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CourseBean.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/beans/CourseBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CourseClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/CourseClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CourseTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/CourseTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EjbCourseTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbCourseTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EjbLanguageTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbLanguageTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EjbLevelTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbLevelTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EjbRoleTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbRoleTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EjbSexTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbSexTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/EjbUserTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbUserTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/LanguageClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/LanguageClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/LanguageTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/LanguageTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/LevelClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/LevelClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/LevelTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/LevelTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/LoginBean.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/beans/LoginBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/RoleClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/RoleClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/RoleTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/RoleTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/SemesterClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/SemesterClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/SemesterTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/SemesterTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/SexClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/SexClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/SexTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/SexTable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/UserClass.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/UserClass.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/UserTable.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/UserTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/61f4f2d7-cd45-4c22-b093-673067eb640e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/61f4f2d7-cd45-4c22-b093-673067eb640e.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Initialization.java" afterPath="$PROJECT_DIR$/src/main/java/Initialization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/load.sql" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/load.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/beans/RegisterBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/beans/SemesterBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbRegisterBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbSemesterTable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/load2.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/register.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/semester.xhtml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1262,7 +1239,7 @@
       <workItem from="1474268851048" duration="42174000" />
       <workItem from="1474459941855" duration="948000" />
       <workItem from="1474461449924" duration="23836000" />
-      <workItem from="1474622968851" duration="548000" />
+      <workItem from="1474622968851" duration="667000" />
     </task>
     <task id="LOCAL-00001" summary="test update">
       <created>1473241498783</created>
@@ -1474,11 +1451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1474552220883</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added semester table, added packages">
+      <created>1474623558259</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1474623558259</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189877000" />
+    <option name="totallyTimeSpent" value="189996000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1500,7 +1484,7 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1515,7 +1499,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14285715" sideWeight="0.48363096" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12260128" sideWeight="0.51636904" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.51636904" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14498934" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1558,7 +1542,8 @@
     <MESSAGE value=" some UI fix" />
     <MESSAGE value=" some more UI fixes" />
     <MESSAGE value="delete of db files" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete of db files" />
+    <MESSAGE value="added semester table, added packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added semester table, added packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1636,6 +1621,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="63" column="22" selection-start-line="45" selection-start-column="8" selection-end-line="63" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1643,6 +1629,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1907,6 +1894,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1936,6 +1924,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

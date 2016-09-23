@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <h:outputLabel value="List of semesters"/>
+        <div class="ViewSemester">
+
+            <h:dataTable value="#{semesterBean.semesterList}" var="s" >
+                <h:column>
+                    <f:facet name="header">Semester Id</f:facet>
+                    #{s.semesterId}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Description</f:facet>
+                    #{s.description}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Start Date</f:facet>
+                    #{s.startDate}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">End Date</f:facet>
+                    #{s.endDate}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Course</f:facet>
+                    #{s.courseId}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Teacher</f:facet>
+                    #{s.teacherId}
+                </h:column>
+                <!--<h:column>
+                    <f:facet name="header">Student Registration</f:facet>
+                    #{s.register}
+                </h:column>-->
+
+            </h:dataTable>
+
+        </div>
+    </h:form>
+
+</f:view>
+</html>
