@@ -1,3 +1,9 @@
+package se.school.beans;
+
+import se.school.ejb.*;
+import se.school.classes.*;
+import se.school.jpa.*;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -68,16 +74,19 @@ public class AdminBean implements Serializable {
 
     public String addUser(){
         //userClass = new UserClass(getUsername(),getPassword(), getRole());
+//        String response = userService.userAdd(user, sex, role);
+//        if (response !="") return "error";
+//        else{
         userService.userAdd(user, sex, role);
-
-        setName("");
-        setUsername("");
-        setPassword("");
-        setEmail("");
-        setAdress("");
-        setContactDetails("");
-        setRole("");
-        return "admin";
+            setName("");
+            setUsername("");
+            setPassword("");
+            setEmail("");
+            setAdress("");
+            setContactDetails("");
+            setRole("");
+            return "admin";
+       // }
     }
 //////////////////////SEX/////////////////////////////////////////
     public List<SexTable> getSexList(){

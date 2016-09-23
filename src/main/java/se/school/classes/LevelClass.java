@@ -1,3 +1,5 @@
+package se.school.classes;
+
 /**
  * Created by:
  *

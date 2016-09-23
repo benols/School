@@ -1,3 +1,5 @@
+package se.school.jpa;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,7 +10,7 @@ import java.util.List;
  * @author Benjamin Olsson
  */
 @Entity
-@Table(name="UserTable", uniqueConstraints=@UniqueConstraint(columnNames="username"))
+@Table(name="UserTable")
 @NamedQueries({
         @NamedQuery(name="selectAllIDs",query="SELECT t.userId FROM UserTable t"),
         @NamedQuery(name="selectAll",query="SELECT t FROM UserTable t"),
@@ -34,9 +36,7 @@ public class UserTable implements Serializable{
     private long userId;
 
     private String name;
-    @Column(name = "username")
     private String username;
-
     private String password;
     private String email;
     private Date birthDate;

@@ -1,3 +1,7 @@
+package se.school.ejb;
+import se.school.classes.RoleClass;
+import se.school.jpa.RoleTable;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

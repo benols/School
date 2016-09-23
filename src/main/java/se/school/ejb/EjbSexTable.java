@@ -1,3 +1,7 @@
+package se.school.ejb;
+import se.school.classes.SexClass;
+import se.school.jpa.SexTable;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

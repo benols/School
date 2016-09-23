@@ -1,3 +1,13 @@
+package se.school.ejb;
+import se.school.classes.RoleClass;
+import se.school.classes.SemesterClass;
+import se.school.classes.SexClass;
+import se.school.classes.UserClass;
+import se.school.jpa.RoleTable;
+import se.school.jpa.SemesterTable;
+import se.school.jpa.SexTable;
+import se.school.jpa.UserTable;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -39,6 +49,14 @@ public class EjbUserTable {
 
         return l;
     }
+	
+	    public void registerStudent(UserClass student, SemesterClass semester){
+        UserTable userTable = new UserTable();
+        SemesterTable semesterTable = em.find(SemesterTable.class, semester.getSemesterId());
+        userTable.setUserId(student.getUserId());
+       // userTable.getSemesterTables().add(semesterTable);
+    }
+
 
 //    public String getUserSex(SexClass s){
 //        SexTable sex = em.find(SexTable.class, s.getSexId());
@@ -61,6 +79,13 @@ public class EjbUserTable {
         userTable.setContactDetails(p.getContactDetails());
         userTable.setName(p.getName());
         userTable.setEmail(p.getEmail());
+//        try {
+//            em.persist(userTable);
+//        }catch (javax.persistence.PersistenceException ex){
+//            return ex.getMessage();
+//        }
+//
+//        return "";
         em.persist(userTable);
     }
 

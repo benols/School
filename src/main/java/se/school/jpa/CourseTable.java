@@ -1,3 +1,4 @@
+package se.school.jpa;
 /**
  * Created by:
  *

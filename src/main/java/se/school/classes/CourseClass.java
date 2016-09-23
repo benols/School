@@ -1,3 +1,8 @@
+package se.school.classes;
+
+import se.school.jpa.LanguageTable;
+import se.school.jpa.LevelTable;
+
 /**
  * Created by:
  *

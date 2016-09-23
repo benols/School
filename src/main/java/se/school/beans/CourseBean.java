@@ -1,3 +1,8 @@
+package se.school.beans;
+
+import se.school.ejb.*;
+import se.school.classes.*;
+import se.school.jpa.*;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;

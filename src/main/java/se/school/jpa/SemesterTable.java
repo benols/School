@@ -1,4 +1,7 @@
+package se.school.jpa;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,27 +15,30 @@ import java.util.Date;
         @NamedQuery(name="selectAllSemesters",query="SELECT t FROM SemesterTable t")
 
 })
-public class SemesterTable {
+public class SemesterTable implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "semesterId", updatable = false, nullable = false)
     private long semesterId;
-
-    @ManyToOne
-    private CourseTable course;
-
-    @OneToOne
-    private UserTable teacher;
-
     private String description;
     private Date startDate;
     private Date endDate;
 
+//    @ManyToOne
+//    @JoinColumn(name="COURSEID")
+//    private CourseTable course;
+
+//    @OneToOne
+//    @JoinColumn(name="USERID")
+//    private UserTable teacher;
+
+
+
     public SemesterTable(CourseTable course, UserTable teacher, String description, Date startDate, Date endDate) {
         this.semesterId = semesterId;
-        this.course = course;
-        this.teacher = teacher;
+        //this.course = course;
+       // this.teacher = teacher;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -48,21 +54,21 @@ public class SemesterTable {
         this.semesterId = semesterId;
     }
 
-    public CourseTable getCourseId() {
-        return course;
-    }
+//    public CourseTable getCourseId() {
+//        return course;
+//    }
+//
+//    public void setCourseId(CourseTable courseId) {
+//        this.course = courseId;
+//    }
 
-    public void setCourseId(CourseTable courseId) {
-        this.course = courseId;
-    }
-
-    public UserTable getTeacherId() {
-        return teacher;
-    }
-
-    public void setTeacherId(UserTable teacherId) {
-        this.teacher = teacherId;
-    }
+//    public UserTable getTeacherId() {
+//        return teacher;
+//    }
+//
+//    public void setTeacherId(UserTable teacherId) {
+//        this.teacher = teacherId;
+//    }
 
     public String getDescription() {
         return description;

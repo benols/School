@@ -1,3 +1,7 @@
+package se.school.ejb;
+import se.school.classes.LevelClass;
+import se.school.jpa.LevelTable;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

@@ -1,3 +1,7 @@
+package se.school.ejb;
+import se.school.classes.LanguageClass;
+import se.school.jpa.LanguageTable;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
