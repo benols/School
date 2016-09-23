@@ -29,9 +29,9 @@ public class EjbCourseTable implements Serializable{
     public List<CourseTable> getAllCourses(String located) {
         List<CourseTable> l;
         if (located.equals(""))
-            l = entityManager.createNamedQuery("SelectWithJoin").getResultList();
+            l = entityManager.createNamedQuery("selectAllCourses").getResultList();
         else
-            l = entityManager.createNamedQuery("selectAllCourses2").getResultList();
+            l = entityManager.createNamedQuery("SelectWithJoin").getResultList();
         for(Object p:l){
             System.err.println(p);
         }

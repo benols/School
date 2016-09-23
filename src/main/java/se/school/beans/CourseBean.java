@@ -4,6 +4,8 @@ import se.school.ejb.*;
 import se.school.classes.*;
 import se.school.jpa.*;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -37,7 +39,15 @@ public class CourseBean implements Serializable{
 
     public String addLanguage(){
         languageService.addLanguage(language);
-        return "course";
+        return "language";
+    }
+    public void editLanguage(long id){
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Sorry implementation later!");
+        FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
+    }
+    public String removeLanguage(long id){
+        //sexService.dataEntryRemove(id);
+        return "language";
     }
 
     //getters and setters for language
@@ -65,7 +75,15 @@ public class CourseBean implements Serializable{
 
     public String addLevel(){
         levelService.addLevel(level);
-        return "course";
+        return "level";
+    }
+    public void editLevel(long id){
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Sorry implementation later!");
+        FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
+    }
+    public String removeLevel(long id){
+        //sexService.dataEntryRemove(id);
+        return "level";
     }
 
     public long getLevelId() {
@@ -101,7 +119,14 @@ public class CourseBean implements Serializable{
         return courseService.getAllCourses("sdfsd");
 
     }
-
+    public void editCourse(long id){
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Sorry implementation later!");
+        FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
+    }
+    public String removeCourse(long id){
+        //sexService.dataEntryRemove(id);
+        return "course";
+    }
     public  String getCourseName(){
         return course.getName();
     }

@@ -11,6 +11,9 @@ import java.util.List;
  */
 @Entity
 @Table(name="UserTable")
+//, uniqueConstraints=@UniqueConstraint(columnNames="username")
+
+
 @NamedQueries({
         @NamedQuery(name="selectAllIDs",query="SELECT t.userId FROM UserTable t"),
         @NamedQuery(name="selectAll",query="SELECT t FROM UserTable t"),
@@ -36,6 +39,7 @@ public class UserTable implements Serializable{
     private long userId;
 
     private String name;
+    //@Column(name = "username")
     private String username;
     private String password;
     private String email;

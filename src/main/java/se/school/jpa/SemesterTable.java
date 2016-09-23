@@ -25,20 +25,20 @@ public class SemesterTable implements Serializable {
     private Date startDate;
     private Date endDate;
 
-//    @ManyToOne
-//    @JoinColumn(name="COURSEID")
-//    private CourseTable course;
+    @ManyToOne
+    @JoinColumn(name="COURSEID")
+    private CourseTable course;
 
-//    @OneToOne
-//    @JoinColumn(name="USERID")
-//    private UserTable teacher;
+    @OneToOne
+    @JoinColumn(name="USERID")
+    private UserTable teacher;
 
 
 
     public SemesterTable(CourseTable course, UserTable teacher, String description, Date startDate, Date endDate) {
         this.semesterId = semesterId;
-        //this.course = course;
-       // this.teacher = teacher;
+        this.course = course;
+        this.teacher = teacher;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -54,21 +54,21 @@ public class SemesterTable implements Serializable {
         this.semesterId = semesterId;
     }
 
-//    public CourseTable getCourseId() {
-//        return course;
-//    }
-//
-//    public void setCourseId(CourseTable courseId) {
-//        this.course = courseId;
-//    }
+    public CourseTable getCourseId() {
+        return course;
+    }
 
-//    public UserTable getTeacherId() {
-//        return teacher;
-//    }
-//
-//    public void setTeacherId(UserTable teacherId) {
-//        this.teacher = teacherId;
-//    }
+    public void setCourseId(CourseTable courseId) {
+        this.course = courseId;
+    }
+
+    public UserTable getTeacherId() {
+        return teacher;
+    }
+
+    public void setTeacherId(UserTable teacherId) {
+        this.teacher = teacherId;
+    }
 
     public String getDescription() {
         return description;
