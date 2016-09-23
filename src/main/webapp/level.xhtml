@@ -28,6 +28,9 @@
                     <b:column medium-screen="4">
                         <b:inputText placeholder="Level" id="level" value="#{courseBean.level}"
                                      ajax="true" autocomplete="false" update="@(.message)">
+                            <f:facet name="prepend">
+                                <b:icon name="signal" />
+                            </f:facet>
                         </b:inputText>
                     </b:column>
                     <b:column medium-screen="6" style-class="message">

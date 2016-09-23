@@ -94,7 +94,7 @@
                         <b:inputText placeholder="Email" id="email" value="#{adminBean.email}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="email" />
+                                <h:outputText value="@" />
                             </f:facet>
                         </b:inputText>
                     </b:column>
@@ -111,7 +111,7 @@
                         <b:inputText placeholder="Address" id="address" value="#{adminBean.adress}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="email" />
+                                <b:icon name="home" />
                             </f:facet>
                         </b:inputText>
                     </b:column>
@@ -127,7 +127,7 @@
                         <b:inputText placeholder="Contact details" id="cd" value="#{adminBean.contactDetails}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="email" />
+                                <b:icon name="pencil" />
                             </f:facet>
                         </b:inputText>
                     </b:column>

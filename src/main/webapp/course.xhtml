@@ -26,13 +26,13 @@
                 <br/>
                 <b:row>
                     <b:column medium-screen="2">
-                        <h:outputText value="Name:" for="code" />
+                        <h:outputText value="Course code:" for="code" />
                     </b:column>
                     <b:column medium-screen="4">
                         <b:inputText placeholder="Course code" id="code" value="#{courseBean.courseCode}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="" />
+                                <b:icon name="pencil" />
                             </f:facet>
                         </b:inputText>
                     </b:column>
@@ -48,7 +48,7 @@
                         <b:inputText placeholder="Name" id="name" value="#{courseBean.courseName}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="" />
+                                <b:icon name="pencil" />
                             </f:facet>
                         </b:inputText>
                     </b:column>
@@ -61,12 +61,12 @@
                         <h:outputText value="Course description:" for="desc" />
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputSecret placeholder="Course description" id="desc" value="#{courseBean.courseDescription}"
+                        <b:inputText placeholder="Course description" id="desc" value="#{courseBean.courseDescription}"
                                        ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="" />
+                                <b:icon name="pencil" />
                             </f:facet>
-                        </b:inputSecret>
+                        </b:inputText>
                     </b:column>
                     <b:column medium-screen="6" styleClass="message">
                         <b:message for="desc" line-break-tag=""/>
@@ -80,7 +80,7 @@
                         <b:inputText placeholder="Duration" id="duration" value="#{courseBean.courseDuration}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="" />
+                                <b:icon name="time" />
                             </f:facet>
                         </b:inputText>
                     </b:column>
@@ -97,7 +97,7 @@
                         <b:inputText placeholder="Max Students" id="maxst" value="#{courseBean.courseMaxStudents}"
                                      ajax="true" autocomplete="false" update="@(.message)">
                             <f:facet name="prepend">
-                                <b:icon name="" />
+                                <b:icon name="pencil" />
                             </f:facet>
                         </b:inputText>
                     </b:column>
@@ -156,6 +156,14 @@
                         #{c.name}
                     </b:column>
                     <b:column>
+                        <f:facet name="header">Description</f:facet>
+                        #{c.description}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Duration</f:facet>
+                        #{c.duration}
+                    </b:column>
+                    <b:column>
                         <f:facet name="header">Max Students</f:facet>
                         #{c.maxStudents}
                     </b:column>
@@ -169,11 +177,11 @@
                     </b:column>
                     <h:column>
                         <f:facet name="header">Edit</f:facet>
-                        <b:commandButton value="Edit" action="#{courseBean.editCourse(c.courseId)}" look="primary" style="width:40%"/>
+                        <b:commandButton value="Edit" action="#{courseBean.editCourse(c.courseId)}" look="primary" style="width:80%"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Delete</f:facet>
-                        <b:commandButton value="Delete" action="#{courseBean.removeCourse(c.courseId)}" look="warning" style="width:40%"/>
+                        <b:commandButton value="Delete" action="#{courseBean.removeCourse(c.courseId)}" look="warning" style="width:80%"/>
                     </h:column>
 
                 </b:dataTable>

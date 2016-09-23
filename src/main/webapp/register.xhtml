@@ -1,13 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="List of registered students on this course"/>
-    <br/>
-    <h:outputLabel value="register student to this course from drop down list of available students"/>
-</f:view>
+<h:head>
+    <title>Course - register</title>
+    <meta name="author" content="Pawel"></meta>
+</h:head>
+<h:body style="padding: 60px;">
+    <b:navBar brand="Register" brandHref="#" fixed="top" inverse="true" update="@body">
+        <b:navbarLinks>
+            <b:navLink value="Back" href="javascript:history.back()"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+    <h:form>
+        <b:container>
+            <b:jumbotron>
+                <h2>Hello, #{loginBean.username}!</h2>
+                <br/>
+                <h:outputLabel value="Register: "/>
+                <br/>
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Course code:" for="code" />
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText placeholder="Course code" id="code" value="#{courseBean.courseCode}"
+                                     ajax="true" autocomplete="false" update="@(.message)">
+                            <f:facet name="prepend">
+                                <b:icon name="pencil" />
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="code" />
+                    </b:column>
+                </b:row>
+
+            </b:jumbotron>
+        </b:container>
+        <br/>
+        <b:container>
+            <b:jumbotron>
+                <h2>List of courses:</h2>
+                <b:dataTable value="#{courseBean.courseList}" var="c" >
+                    <b:column>
+                        <f:facet name="header">Course Id</f:facet>
+                        #{c.courseId}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Course code</f:facet>
+                        #{c.courseCode}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{c.name}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Description</f:facet>
+                        #{c.description}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Duration</f:facet>
+                        #{c.duration}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Max Students</f:facet>
+                        #{c.maxStudents}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Level</f:facet>
+                        #{c.levelId.level}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">language</f:facet>
+                        #{c.languageId.language}
+                    </b:column>
+                </b:dataTable>
+            </b:jumbotron>
+        </b:container>
+
+
+    </h:form>
+
+</h:body>
 </html>
