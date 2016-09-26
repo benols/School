@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="working listing languages, course listing almost working">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/classes/AttendanceClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/ejb/EjbAttendanceTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/se/school/jpa/AttendanceTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/attendance.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/school/beans/SemesterBean.java" afterPath="$PROJECT_DIR$/src/main/java/se/school/beans/SemesterBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/semester.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/semester.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/teacher.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/teacher.xhtml" />
-    </list>
+    <list default="true" id="cdc4807b-3499-4f3f-a043-3c67a41847f8" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -201,6 +192,7 @@
     </option>
     <push-targets>
       <push-target-info repo="$PROJECT_DIR$" source="tmp" target-remote="origin" target-branch="tmp" />
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="ben2" />
     </push-targets>
   </component>
   <component name="GradleLocalSettings">
@@ -1098,7 +1090,7 @@
       <workItem from="1474792990633" duration="1303000" />
       <workItem from="1474795310546" duration="4251000" />
       <workItem from="1474825176538" duration="12214000" />
-      <workItem from="1474875077179" duration="11449000" />
+      <workItem from="1474875077179" duration="11528000" />
     </task>
     <task id="LOCAL-00001" summary="test update">
       <created>1473241498783</created>
@@ -1219,11 +1211,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473686894173</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added attendance list">
+      <created>1474896592615</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1474896592615</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110932000" />
+    <option name="totallyTimeSpent" value="111011000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1236,7 +1235,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20041753" sideWeight="0.5062807" order="6" side_tool="true" content_ui="tabs" />
@@ -1256,7 +1255,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26002166" sideWeight="0.49371928" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26002166" sideWeight="0.49371928" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1332,7 +1331,8 @@
     <MESSAGE value="new tables" />
     <MESSAGE value="working listing language list not working course listing yet" />
     <MESSAGE value="working listing languages, course listing almost working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working listing languages, course listing almost working" />
+    <MESSAGE value="added attendance list" />
+    <option name="LAST_COMMIT_MESSAGE" value="added attendance list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
