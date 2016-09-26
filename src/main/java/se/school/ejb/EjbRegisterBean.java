@@ -58,6 +58,7 @@ public class EjbRegisterBean implements Serializable {
 }*/
 
     public void addRegister(SemesterClass semesterClass, UserClass userClass) {
+        System.out.println("Registering user");
         SemesterTable semesterTable = new SemesterTable();
         SemesterTable semester = entityManager.find(SemesterTable.class, semesterClass.getSemesterId());
         UserTable user = entityManager.find(UserTable.class, userClass.getUserId());

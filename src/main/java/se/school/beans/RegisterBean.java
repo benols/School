@@ -63,6 +63,8 @@ public class RegisterBean implements Serializable {
     public List<SemesterTable> getSemesterList() {
         return ejbSemesterTable.getAllSemesters("");
     }
+    //todo let semesterTable return object instead of long
+
 
     /*public void setSemesterId(long semester){
         //registerService.setSemester(semester);
