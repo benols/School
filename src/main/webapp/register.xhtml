@@ -22,62 +22,58 @@
                 <br/>
                 <h:outputLabel value="Register: "/>
                 <br/>
+
                 <b:row>
                     <b:column medium-screen="2">
-                        <h:outputText value="Course code:" for="code" />
+                        <h:outputLabel value="Student: " for="tea"/>
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputText placeholder="Course code" id="code" value="#{courseBean.courseCode}"
-                                     ajax="true" autocomplete="false" update="@(.message)">
-                            <f:facet name="prepend">
-                                <b:icon name="pencil" />
-                            </f:facet>
-                        </b:inputText>
+                        <b:selectOneMenu value="#{semesterBean.userId}" id="tea">
+                            <f:selectItems value="#{semesterBean.studentsList}" var="userTable" itemLabel="#{userTable.name}" itemValue="#{userTable.userId}" />
+                        </b:selectOneMenu>
                     </b:column>
                     <b:column medium-screen="6" style-class="message">
-                        <b:message for="code" />
+                        <b:message for="tea" />
                     </b:column>
                 </b:row>
 
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputLabel value="Semester: " for="semester"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:selectOneMenu value="#{semesterBean.semesterId}" id="semester">
+                            <f:selectItems value="#{semesterBean.semesterList}" var="sem" itemLabel="#{sem.description}" itemValue="#{sem.semesterId}" />
+                        </b:selectOneMenu>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="semester" />
+                    </b:column>
+                </b:row>
+
+                <br/>
+                <b:commandButton value="Add" action="#{semesterBean.addRegistration}" update="@form" look="primary"
+                                 style="width:20%" />
             </b:jumbotron>
         </b:container>
         <br/>
         <b:container>
             <b:jumbotron>
-                <h2>List of courses:</h2>
-                <b:dataTable value="#{courseBean.courseList}" var="c" >
+                <h2>List of registred courses:</h2>
+                <b:dataTable value="#{semesterBean.registrationList}" var="c" >
                     <b:column>
-                        <f:facet name="header">Course Id</f:facet>
-                        #{c.courseId}
+                        <f:facet name="header">Registration Id</f:facet>
+                        #{c.registrationId}
                     </b:column>
                     <b:column>
-                        <f:facet name="header">Course code</f:facet>
-                        #{c.courseCode}
+                        <f:facet name="header">Student</f:facet>
+                        #{c.student.name}
                     </b:column>
                     <b:column>
-                        <f:facet name="header">Name</f:facet>
-                        #{c.name}
+                        <f:facet name="header">Semester</f:facet>
+                        #{c.semester.description}
                     </b:column>
-                    <b:column>
-                        <f:facet name="header">Description</f:facet>
-                        #{c.description}
-                    </b:column>
-                    <b:column>
-                        <f:facet name="header">Duration</f:facet>
-                        #{c.duration}
-                    </b:column>
-                    <b:column>
-                        <f:facet name="header">Max Students</f:facet>
-                        #{c.maxStudents}
-                    </b:column>
-                    <b:column>
-                        <f:facet name="header">Level</f:facet>
-                        #{c.levelId.level}
-                    </b:column>
-                    <b:column>
-                        <f:facet name="header">language</f:facet>
-                        #{c.languageId.language}
-                    </b:column>
+
                 </b:dataTable>
             </b:jumbotron>
         </b:container>

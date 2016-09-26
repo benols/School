@@ -2,10 +2,7 @@ package se.school.beans;
 
 import se.school.classes.*;
 import se.school.ejb.*;
-import se.school.jpa.AttendanceTable;
-import se.school.jpa.CourseTable;
-import se.school.jpa.SemesterTable;
-import se.school.jpa.UserTable;
+import se.school.jpa.*;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -40,6 +37,8 @@ public class SemesterBean implements Serializable {
     private EjbRoleTable ejbRoleTable;
     @Inject
     private EjbAttendanceTable ejbAttendanceTable;
+    @Inject
+    private EjbRegistrationTable ejbRegistrationTable;
 
 
     public String addSemester(){
@@ -60,6 +59,21 @@ public class SemesterBean implements Serializable {
         //return new SemesterTable();
     }
 
+    public String addRegistration(){
+        //Add semester TODO
+        ejbRegistrationTable.addRegistration(userClass, semesterClass);
+
+        return "attendance";
+    }
+    public List<RegistrationTable> getRegistrationList(){
+        return ejbRegistrationTable.getAllAttendances("");
+        //return new SemesterTable();
+    }
+    public List<UserTable> getStudentsList(){
+        return ejbUserTable.getAllUsers("");// Change to get all teachers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //return ejbUserTable.getAllTeachers("");
+        //return ejbRoleTable.getTeachers();
+    }
     public List<UserTable> getTeacherList(){
         return ejbUserTable.getAllUsers("");// Change to get all teachers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //return ejbUserTable.getAllTeachers("");
