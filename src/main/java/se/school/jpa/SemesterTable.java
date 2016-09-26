@@ -2,7 +2,9 @@ package se.school.jpa;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by:
@@ -12,7 +14,8 @@ import java.util.Date;
 @Entity
 @Table(name = "SemesterTable")
 @NamedQueries({
-        @NamedQuery(name="selectAllSemesters",query="SELECT t FROM SemesterTable t")
+        @NamedQuery(name="selectAllSemesters",query="SELECT t FROM SemesterTable t")//,
+        //@NamedQuery(name="addSemesters",query="INSERT INTO semester INTO t FROM SemesterTable t")
 
 })
 public class SemesterTable implements Serializable {
@@ -33,7 +36,13 @@ public class SemesterTable implements Serializable {
     @JoinColumn(name="userId")
     private UserTable teacher;
 
-
+    @ManyToMany
+    @JoinTable(
+            name = "Register",
+            joinColumns = @JoinColumn(name = "SemesterId", referencedColumnName = "SemesterId"),
+            inverseJoinColumns = @JoinColumn(name = "UserId", referencedColumnName = "UserId")
+    )
+    private List<UserTable> registerList = new ArrayList<UserTable>();
 
     public SemesterTable(CourseTable course, UserTable teacher, String description, Date startDate, Date endDate) {
         //this.semesterId = semesterId;
@@ -42,6 +51,15 @@ public class SemesterTable implements Serializable {
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+
+    public List<UserTable> getRegisterList() {
+        return registerList;
+    }
+
+    public void setRegisterList(List<UserTable> registerList) {
+        this.registerList = registerList;
     }
 
     public SemesterTable() {}
@@ -93,4 +111,19 @@ public class SemesterTable implements Serializable {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+    /*public void addStudentToRegisterList(UserTable user) {
+        //// TODO: 2016-09-26
+        List<UserTable> temp = getRegisterList();
+        temp.add(user);
+    }*/
+
+   /* public void addSemesterToRegisterList(SemesterTable semester) {
+        //// TODO: 2016-09-26
+        List<SemesterTable> temp = selectAllSemesters();
+        temp.add(semester);
+    }*/
+
+    /*private List<SemesterTable> getSemesterList() {
+    }*/
 }

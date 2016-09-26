@@ -116,11 +116,11 @@ public class SemesterBean implements Serializable {
         //return new SemesterTable();
     }
 
-    public String register(){
+    /*public String register(){
         SemesterTable chosenSemester = new SemesterTable();
         ejbRegisterBean.setSemester(chosenSemester);
         return "register";
-    }
+    }*/
     /*public String addStudent(){
         ejbRegisterBean.registerStudent(UserTable student, SemesterTable semester)
         return "semester";

@@ -48,4 +48,7 @@ public class EjbSemesterTable {
         return l;
     }
 
+   /* public void setSemester(SemesterTable semester) {
+        entityManager.createNamedQuery("addSemester").setParameter("semester", semester).executeUpdate();
+    }*/
 }
