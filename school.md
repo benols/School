@@ -1,4 +1,47 @@
-Installation 
+Installation PostGreSQL
+
+1. Download a JAR file from the PostgreSQL JDBC site https://jdbc.postgresql.org/download.html.
+2. Put the driver in Glassfish/domains/domain1/lib
+
+1. psql -U postgres -h localhost
+
+   CREATE USER admin WITH PASSWORD 'admin';
+   CREATE DATABASE school WITH OWNER admin ENCODING 'UTF8';
+
+1. Start up GlassFish:
+	asadmin start-domain
+2. Activate the GlassFish administration consol:
+	asadmin
+3. Create the connection pool with a command like the following:
+create-jdbc-connection-pool --datasourceclassname org.postgresql.ds.PGSimpleDataSource --restype javax.sql.XADataSource --property portNumber=5432:password=admin:user=admin:serverName=localhost:databaseName=school school_postgresql_pool
+
+3. Next, create a GlassFish JDBC resource. (This resource will be used in the JPA conﬁguration ﬁle to reference the connection pool.)
+    Issue the following command inside the GlassFish administration consol:
+create-jdbc-resource --connectionpoolid school_postgresql_pool jdbc/school2
+
+It only remains to conﬁgure the web application itself.
+1. CreateaJPAconﬁgurationﬁle,andaddittothefollowingdirectoryin yourMavenproject:
+	src/main/resources/META-INF/persistence.xml.
+	i.e:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+        version="2.1"
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="school" transaction-type="JTA">
+        <jta-data-source>jdbc/school2</jta-data-source>
+        <properties>
+            <property name="eclipselink.logging.exceptions" value="false"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+
+/////////////////////////////////////////////////
+
+Installation Derby
 
 1 install GlassFish
 2 install apache-derby
@@ -11,7 +54,7 @@ Installation
 2. Activate the GlassFish administration consol: 
 	asadmin
 3. Create the connection pool with a command like the following: 
-	create-jdbc-connection-pool --datasourceclassname org.apache.derby.jdbc.ClientDataSource --restype javax.sql.XADataSource --property portNumber=1527:password=admin:user=admin:serverName=localhost: databaseName=school:connectionAttributes=\;create\\=true school_derby_pool. 
+	create-jdbc-connection-pool --datasourceclassname org.apache.derby.jdbc.ClientDataSource --restype javax.sql.XADataSource --property portNumber=1527:password=admin:user=admin:serverName=localhost:databaseName=school:connectionAttributes=\;create\\=true school_derby_pool
 3. Next, create a GlassFish JDBC resource. (This resource will be used in the JPA conﬁguration ﬁle to reference the connection pool.) 
 Issue the following command inside the GlassFish administration consol: 
 	create-jdbc-resource --connectionpoolid school_derby_pool jdbc/school 

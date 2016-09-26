@@ -26,17 +26,17 @@ public class SemesterTable implements Serializable {
     private Date endDate;
 
     @ManyToOne
-    @JoinColumn(name="COURSEID")
+    @JoinColumn(name="courseId")
     private CourseTable course;
 
     @OneToOne
-    @JoinColumn(name="USERID")
+    @JoinColumn(name="userId")
     private UserTable teacher;
 
 
 
     public SemesterTable(CourseTable course, UserTable teacher, String description, Date startDate, Date endDate) {
-        this.semesterId = semesterId;
+        //this.semesterId = semesterId;
         this.course = course;
         this.teacher = teacher;
         this.description = description;
