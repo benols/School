@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>School - Attendance list</title>
+    <meta name="author" content="Benjamin"></meta>
+</h:head>
+<h:body style="padding: 60px;">
+    <b:navBar brand="attendance" brandHref="#" fixed="top" inverse="true" update="@body">
+        <b:navbarLinks>
+
+            <b:navLink value="Back" href="javascript:history.back()"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+    <h:form>
+        <b:container>
+            <b:jumbotron>
+                <h:outputLabel value="Add attendance"/>
+
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Date:" for="sd"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:dateTimePicker id="sd" mode="toggle-icon" showWeek="true" firstDay="1"
+                                      value="#{semesterBean.date}"/>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="sd" />
+                    </b:column>
+                </b:row>
+
+
+
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputLabel value="Student: " for="tea"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:selectOneMenu value="#{semesterBean.userId}" id="tea">
+                            <f:selectItems value="#{semesterBean.teacherList}" var="userTable" itemLabel="#{userTable.name}" itemValue="#{userTable.userId}" />
+                        </b:selectOneMenu>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="tea" />
+                    </b:column>
+                </b:row>
+
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:outputLabel value="Semester: " for="semester"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:selectOneMenu value="#{semesterBean.semesterId}" id="semester">
+                            <f:selectItems value="#{semesterBean.semesterList}" var="sem" itemLabel="#{sem.description}" itemValue="#{sem.semesterId}" />
+                        </b:selectOneMenu>
+                    </b:column>
+                    <b:column medium-screen="6" style-class="message">
+                        <b:message for="semester" />
+                    </b:column>
+                </b:row>
+
+                <br/>
+                <b:commandButton value="Add" action="#{semesterBean.addAttendance}" update="@form" look="primary"
+                                 style="width:20%" />
+            </b:jumbotron>
+        </b:container>
+
+
+        <b:container>
+            <b:jumbotron>
+                <h2>Attendance list:</h2>
+                <b:dataTable value="#{semesterBean.attendanceList}" var="s" >
+                    <b:column>
+                        <f:facet name="header">Attendance Id</f:facet>
+                        #{s.attendanceId}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Date</f:facet>
+                        #{s.date}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Semester description</f:facet>
+                        #{s.semester.description}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Student name</f:facet>
+                        #{s.student.name}
+                    </b:column>
+
+                </b:dataTable>
+
+            </b:jumbotron>
+        </b:container>
+
+
+    </h:form>
+
+</h:body>
+</html>

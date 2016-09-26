@@ -1,10 +1,8 @@
 package se.school.beans;
 
-import se.school.classes.CourseClass;
-import se.school.classes.LanguageClass;
-import se.school.classes.SemesterClass;
-import se.school.classes.UserClass;
+import se.school.classes.*;
 import se.school.ejb.*;
+import se.school.jpa.AttendanceTable;
 import se.school.jpa.CourseTable;
 import se.school.jpa.SemesterTable;
 import se.school.jpa.UserTable;
@@ -27,6 +25,7 @@ public class SemesterBean implements Serializable {
     private SemesterClass semesterClass = new SemesterClass();
     //SemesterTable semesterTable = new SemesterTable();
     private LanguageClass languageClass = new LanguageClass();
+    private AttendanceClass attendanceClass = new AttendanceClass();
 
     @Inject
     private EjbRegisterBean ejbRegisterBean;
@@ -39,6 +38,8 @@ public class SemesterBean implements Serializable {
     private EjbCourseTable courseService;
     @Inject
     private EjbRoleTable ejbRoleTable;
+    @Inject
+    private EjbAttendanceTable ejbAttendanceTable;
 
 
     public String addSemester(){
@@ -46,6 +47,17 @@ public class SemesterBean implements Serializable {
         ejbSemesterTable.addSemester(courseClass, userClass, semesterClass);
 
         return "semester";
+    }
+
+    public String addAttendance(){
+        //Add semester TODO
+        ejbAttendanceTable.addAttendance(userClass, semesterClass, attendanceClass);
+
+        return "attendance";
+    }
+    public List<AttendanceTable> getAttendanceList(){
+        return ejbAttendanceTable.getAllAttendances("");
+        //return new SemesterTable();
     }
 
     public List<UserTable> getTeacherList(){
@@ -76,6 +88,7 @@ public class SemesterBean implements Serializable {
     public void setStartDate(Date date){
         semesterClass.setStartDate(date);
     }
+
     public long getSemesterId(){
         return semesterClass.getCourseId();
     }
@@ -125,4 +138,15 @@ public class SemesterBean implements Serializable {
         ejbRegisterBean.registerStudent(UserTable student, SemesterTable semester)
         return "semester";
     }*/
+
+    ////////////////////////////attendance////////////////////////
+    public Date getDate() {
+        return attendanceClass.getDate();
+    }
+
+    public void setDate(Date date) {
+        attendanceClass.setDate(date); ;
+    }
+
+
 }
