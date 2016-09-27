@@ -86,7 +86,7 @@
                 </b:column>
                 <b:column medium-screen="4">
                     <b:selectOneMenu value="#{semesterBean.courseId}" id="course">
-                        <f:selectItems value="#{semesterBean.courseList}" var="cTable" itemLabel="#{cTable.name}" itemValue="#{cTable.courseId}" />
+                        <f:selectItems value="#{semesterBean.courseList}" var="cTable" itemLabel="#{cTable.courseCode}" itemValue="#{cTable.courseId}" />
                     </b:selectOneMenu>
                 </b:column>
                 <b:column medium-screen="6" style-class="message">
@@ -122,9 +122,13 @@
         #{s.endDate}
     </b:column>
     <b:column>
-        <f:facet name="header">Course</f:facet>
+        <f:facet name="header">Course name</f:facet>
         #{s.courseId.name}
     </b:column>
+        <b:column>
+            <f:facet name="header">Course code</f:facet>
+            #{s.courseId.courseCode}
+        </b:column>
     <b:column>
         <f:facet name="header">Teacher</f:facet>
         #{s.teacherId.name}

@@ -21,7 +21,7 @@ public class EjbCourseTable implements Serializable{
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void dataEntryRemove( Long id) {
+    public void removeCourse( Long id) {
         CourseTable table = entityManager.find(CourseTable.class, id);
         entityManager.remove(table);
     }

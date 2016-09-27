@@ -124,7 +124,7 @@ public class CourseBean implements Serializable{
         FacesContext.getCurrentInstance().addMessage("loginForm:password", msg);
     }
     public String removeCourse(long id){
-        //sexService.dataEntryRemove(id);
+        courseService.removeCourse(id);
         return "course";
     }
     public  String getCourseName(){

@@ -15,7 +15,6 @@ import java.io.Serializable;
  * @author Benjamin Olsson
  */
 @Named
-//@ManagedBean
 @SessionScoped
 public class LoginBean implements Serializable{
     private UserClass logedUser = new UserClass("admin", "admin", "admin");
