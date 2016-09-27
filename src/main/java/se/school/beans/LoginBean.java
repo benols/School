@@ -104,6 +104,10 @@ public class LoginBean implements Serializable{
         logedUser.setRole(role);
     }
 
+    public UserClass getLogedUser(){
+        return logedUser;
+    }
+
 
 
 

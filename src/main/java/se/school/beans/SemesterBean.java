@@ -39,6 +39,8 @@ public class SemesterBean implements Serializable {
     private EjbAttendanceTable ejbAttendanceTable;
     @Inject
     private EjbRegistrationTable ejbRegistrationTable;
+    @Inject
+    private LoginBean loginBean;
 
 
     public String addSemester(){
@@ -63,7 +65,13 @@ public class SemesterBean implements Serializable {
         //Add semester TODO
         ejbRegistrationTable.addRegistration(userClass, semesterClass);
 
-        return "attendance";
+        return "register";
+    }
+    public String addRegistrationForStudent(){
+        //Add semester TODO
+        ejbRegistrationTable.addRegistration(loginBean.getLogedUser(), semesterClass);
+
+        return "studentRegister";
     }
     public List<RegistrationTable> getRegistrationList(){
         return ejbRegistrationTable.getAllAttendances("");
